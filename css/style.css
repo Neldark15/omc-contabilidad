@@ -6,23 +6,23 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  /* Palette */
-  --bg: #08090d;
-  --bg-2: #0c0e14;
-  --bg-3: #10131c;
-  --surface: rgba(255,255,255,0.03);
-  --surface-hover: rgba(255,255,255,0.06);
-  --border: rgba(255,255,255,0.07);
-  --border-hover: rgba(255,255,255,0.12);
+  /* Palette — Lighter refined */
+  --bg: #111318;
+  --bg-2: #161921;
+  --bg-3: #1b1f2a;
+  --surface: rgba(255,255,255,0.045);
+  --surface-hover: rgba(255,255,255,0.08);
+  --border: rgba(255,255,255,0.09);
+  --border-hover: rgba(255,255,255,0.16);
   /* Gold Accent */
-  --gold: #d4a853;
-  --gold-light: #f0d78c;
-  --gold-glow: rgba(212,168,83,0.25);
-  --gold-subtle: rgba(212,168,83,0.08);
+  --gold: #c9a04e;
+  --gold-light: #e8cc7a;
+  --gold-glow: rgba(201,160,78,0.22);
+  --gold-subtle: rgba(201,160,78,0.08);
   /* Text */
-  --t1: #f5f0e8;
-  --t2: #a09b90;
-  --t3: #5c584f;
+  --t1: #f0ede6;
+  --t2: #b0aaa0;
+  --t3: #7a756c;
   /* Geometry */
   --r-sm: 8px;
   --r-md: 14px;
