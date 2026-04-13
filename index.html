@@ -3,527 +3,598 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OMC S.A.S De C.V | Despacho Contable</title>
+  <title>OMC S.A.S De C.V | Despacho Contable de Élite</title>
   <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+
+  <!-- Cursor follower -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">OMC</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
 
   <!-- ========== NAVBAR ========== -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#" class="nav-logo">
-        <span class="logo-icon"><i class="fas fa-chart-line"></i></span>
-        <span class="logo-text">OMC <small>S.A.S De C.V</small></span>
+        <div class="logo-mark">
+          <svg viewBox="0 0 40 40" fill="none">
+            <rect x="2" y="2" width="36" height="36" rx="8" stroke="url(#logoGrad)" stroke-width="2"/>
+            <path d="M12 20L18 14L26 22L20 28Z" fill="url(#logoGrad)"/>
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40">
+                <stop offset="0%" stop-color="#d4a853"/>
+                <stop offset="100%" stop-color="#f0d78c"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">OMC</span>
+          <span class="logo-sub">S.A.S De C.V</span>
+        </div>
       </a>
+
       <ul class="nav-menu" id="navMenu">
-        <li><a href="#inicio" class="nav-link active">Inicio</a></li>
-        <li><a href="#servicios" class="nav-link">Servicios</a></li>
-        <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-        <li><a href="#resultados" class="nav-link">Resultados</a></li>
-        <li><a href="#proceso" class="nav-link">Proceso</a></li>
-        <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
-        <li><a href="#planes" class="nav-link">Planes</a></li>
-        <li><a href="#faq" class="nav-link">FAQ</a></li>
-        <li><a href="#contacto" class="nav-link nav-cta">Contactar</a></li>
+        <li><a href="#inicio" class="nav-link" data-text="Inicio">Inicio</a></li>
+        <li><a href="#servicios" class="nav-link" data-text="Servicios">Servicios</a></li>
+        <li><a href="#nosotros" class="nav-link" data-text="Nosotros">Nosotros</a></li>
+        <li><a href="#resultados" class="nav-link" data-text="Resultados">Resultados</a></li>
+        <li><a href="#planes" class="nav-link" data-text="Planes">Planes</a></li>
+        <li><a href="#equipo" class="nav-link" data-text="Equipo">Equipo</a></li>
+        <li><a href="#faq" class="nav-link" data-text="FAQ">FAQ</a></li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+
+      <div class="nav-right">
+        <a href="#contacto" class="nav-cta magnetic-btn">
+          <span>Consulta Gratis</span>
+          <div class="btn-shine"></div>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+          <div class="toggle-line"></div>
+          <div class="toggle-line"></div>
+        </button>
+      </div>
     </div>
   </nav>
 
   <!-- ========== HERO ========== -->
   <section class="hero" id="inicio">
-    <div class="hero-bg-shapes">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
+    <div class="hero-grain"></div>
+    <div class="hero-mesh">
+      <div class="mesh-orb mesh-1"></div>
+      <div class="mesh-orb mesh-2"></div>
+      <div class="mesh-orb mesh-3"></div>
     </div>
-    <div class="container hero-content">
-      <div class="hero-text">
-        <span class="hero-badge">Despacho Contable Profesional</span>
-        <h1>Soluciones <span class="text-accent">contables</span> y fiscales para tu <span class="text-accent">negocio</span></h1>
-        <p>Optimizamos tu carga fiscal, protegemos tu patrimonio y te acompañamos en cada etapa de crecimiento con más de 15 años de experiencia.</p>
-        <div class="hero-actions">
-          <a href="#contacto" class="btn btn-primary">
-            <i class="fas fa-paper-plane"></i> Agendar Consulta
+
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <div class="hero-tag reveal-text">
+          <div class="tag-dot"></div>
+          <span>Despacho contable de nueva generación</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="title-line reveal-text">Tu empresa merece</span>
+          <span class="title-line reveal-text">una contabilidad</span>
+          <span class="title-line accent-line reveal-text">
+            <span class="rotating-words" id="rotatingWords">
+              <span class="word active">estratégica</span>
+              <span class="word">inteligente</span>
+              <span class="word">confiable</span>
+              <span class="word">precisa</span>
+            </span>
+          </span>
+        </h1>
+
+        <p class="hero-desc reveal-text">Transformamos la gestión fiscal y contable de más de 500 empresas en México. Estrategia, tecnología y experiencia al servicio de tu crecimiento.</p>
+
+        <div class="hero-actions reveal-text">
+          <a href="#contacto" class="btn-primary magnetic-btn">
+            <span>Agendar Consulta</span>
+            <i class="fas fa-arrow-right"></i>
+            <div class="btn-shine"></div>
           </a>
-          <a href="#servicios" class="btn btn-glass">
-            <i class="fas fa-arrow-down"></i> Ver Servicios
+          <a href="#servicios" class="btn-outline magnetic-btn">
+            <span>Explorar</span>
+            <div class="btn-border"></div>
           </a>
         </div>
-        <div class="hero-stats">
-          <div class="stat-item">
-            <span class="stat-number" data-count="500">0</span><span class="stat-suffix">+</span>
-            <span class="stat-label">Clientes Activos</span>
+
+        <div class="hero-proof reveal-text">
+          <div class="proof-avatars">
+            <div class="avatar">RM</div>
+            <div class="avatar">MG</div>
+            <div class="avatar">CH</div>
+            <div class="avatar">+</div>
           </div>
-          <div class="stat-item">
-            <span class="stat-number" data-count="15">0</span><span class="stat-suffix"> años</span>
-            <span class="stat-label">De Experiencia</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-count="98">0</span><span class="stat-suffix">%</span>
-            <span class="stat-label">Satisfacción</span>
-          </div>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-card glass-card">
-          <div class="card-header">
-            <div class="card-dot green"></div>
-            <div class="card-dot yellow"></div>
-            <div class="card-dot red"></div>
-            <span>Estado Fiscal</span>
-          </div>
-          <div class="card-body">
-            <div class="card-metric">
-              <i class="fas fa-check-circle"></i>
-              <div>
-                <small>Declaraciones</small>
-                <strong>Al corriente</strong>
-              </div>
-            </div>
-            <div class="card-metric">
-              <i class="fas fa-shield-halved"></i>
-              <div>
-                <small>Cumplimiento SAT</small>
-                <strong>100%</strong>
-              </div>
-            </div>
-            <div class="card-metric">
-              <i class="fas fa-chart-pie"></i>
-              <div>
-                <small>Ahorro Fiscal</small>
-                <strong>+32%</strong>
-              </div>
+          <div class="proof-text">
+            <strong>500+ empresas</strong> confían en nosotros
+            <div class="proof-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>4.9/5</span>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="hero-right">
+        <div class="hero-dashboard">
+          <div class="dash-card dash-main glass-morph">
+            <div class="dash-header">
+              <span class="dash-title">Panel Fiscal</span>
+              <div class="dash-dots"><span></span><span></span><span></span></div>
+            </div>
+            <div class="dash-chart">
+              <svg viewBox="0 0 300 120" class="chart-svg">
+                <defs>
+                  <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#d4a853" stop-opacity="0.3"/>
+                    <stop offset="100%" stop-color="#d4a853" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0,100 Q30,90 60,70 T120,50 T180,30 T240,20 T300,10 L300,120 L0,120Z" fill="url(#chartGrad)" class="chart-area"/>
+                <path d="M0,100 Q30,90 60,70 T120,50 T180,30 T240,20 T300,10" fill="none" stroke="#d4a853" stroke-width="2" class="chart-line"/>
+              </svg>
+              <div class="chart-label">Ahorro fiscal acumulado</div>
+              <div class="chart-value">+32%</div>
+            </div>
+          </div>
+
+          <div class="dash-card dash-status glass-morph float-card-1">
+            <div class="status-icon success"><i class="fas fa-check"></i></div>
+            <div>
+              <div class="status-title">SAT</div>
+              <div class="status-text">Al corriente</div>
+            </div>
+          </div>
+
+          <div class="dash-card dash-metric glass-morph float-card-2">
+            <div class="metric-ring">
+              <svg viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="20" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="3"/>
+                <circle cx="24" cy="24" r="20" fill="none" stroke="#d4a853" stroke-width="3" stroke-dasharray="126" stroke-dashoffset="6" stroke-linecap="round" transform="rotate(-90 24 24)"/>
+              </svg>
+              <span>100%</span>
+            </div>
+            <div>
+              <div class="status-title">Cumplimiento</div>
+              <div class="status-text">Fiscal</div>
+            </div>
+          </div>
+
+          <div class="dash-card dash-alert glass-morph float-card-3">
+            <i class="fas fa-bell"></i>
+            <span>Declaración mensual enviada</span>
+            <small>Hace 2h</small>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="scroll-indicator">
-      <span>Scroll</span>
-      <i class="fas fa-chevron-down"></i>
+
+    <div class="hero-scroll-line">
+      <div class="scroll-progress" id="scrollLine"></div>
     </div>
   </section>
 
+  <!-- ========== MARQUEE ========== -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Contabilidad General</span><span class="sep">&bull;</span>
+      <span>Fiscal y Tributario</span><span class="sep">&bull;</span>
+      <span>Nóminas y IMSS</span><span class="sep">&bull;</span>
+      <span>Auditoría Financiera</span><span class="sep">&bull;</span>
+      <span>Consultoría Empresarial</span><span class="sep">&bull;</span>
+      <span>Defensa Fiscal</span><span class="sep">&bull;</span>
+      <span>Facturación CFDI</span><span class="sep">&bull;</span>
+      <span>Planeación Tributaria</span><span class="sep">&bull;</span>
+      <span>Contabilidad General</span><span class="sep">&bull;</span>
+      <span>Fiscal y Tributario</span><span class="sep">&bull;</span>
+      <span>Nóminas y IMSS</span><span class="sep">&bull;</span>
+      <span>Auditoría Financiera</span><span class="sep">&bull;</span>
+      <span>Consultoría Empresarial</span><span class="sep">&bull;</span>
+      <span>Defensa Fiscal</span><span class="sep">&bull;</span>
+      <span>Facturación CFDI</span><span class="sep">&bull;</span>
+      <span>Planeación Tributaria</span><span class="sep">&bull;</span>
+    </div>
+  </div>
+
   <!-- ========== SERVICIOS ========== -->
-  <section class="section servicios" id="servicios">
+  <section class="section" id="servicios">
     <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Nuestros Servicios</span>
-        <h2>Soluciones integrales para tu <span class="text-accent">empresa</span></h2>
-        <p>Ofrecemos un abanico completo de servicios contables, fiscales y de consultoría adaptados a las necesidades de tu negocio.</p>
+      <div class="section-top">
+        <div class="section-label">
+          <div class="label-line"></div>
+          <span>Servicios</span>
+        </div>
+        <h2 class="section-title reveal-text">Soluciones integrales<br><span class="text-gold">para cada necesidad</span></h2>
       </div>
-      <div class="services-grid">
-        <div class="service-card glass-card" data-aos="fade-up">
-          <div class="service-icon">
-            <i class="fas fa-file-invoice-dollar"></i>
-          </div>
+
+      <div class="services-bento">
+        <div class="bento-card bento-lg glass-morph" data-service="contabilidad">
+          <div class="bento-number">01</div>
+          <div class="bento-icon"><i class="fas fa-file-invoice-dollar"></i></div>
           <h3>Contabilidad General</h3>
-          <p>Registro contable, estados financieros, balanzas de comprobación y reportes mensuales para la toma de decisiones.</p>
-          <a href="#contacto" class="service-link">Más info <i class="fas fa-arrow-right"></i></a>
+          <p>Registro contable integral, estados financieros, balanzas de comprobación y reportes ejecutivos mensuales para decisiones informadas.</p>
+          <div class="bento-arrow"><i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-icon">
-            <i class="fas fa-landmark"></i>
-          </div>
+        <div class="bento-card glass-morph" data-service="fiscal">
+          <div class="bento-number">02</div>
+          <div class="bento-icon"><i class="fas fa-landmark"></i></div>
           <h3>Fiscal y Tributario</h3>
-          <p>Declaraciones mensuales y anuales, planeación fiscal, devoluciones de impuestos y cumplimiento ante el SAT.</p>
-          <a href="#contacto" class="service-link">Más info <i class="fas fa-arrow-right"></i></a>
+          <p>Declaraciones, planeación fiscal, devoluciones y cumplimiento ante el SAT.</p>
+          <div class="bento-arrow"><i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="service-icon">
-            <i class="fas fa-users-gear"></i>
-          </div>
+        <div class="bento-card glass-morph" data-service="nominas">
+          <div class="bento-number">03</div>
+          <div class="bento-icon"><i class="fas fa-users-gear"></i></div>
           <h3>Nóminas y IMSS</h3>
-          <p>Cálculo de nómina, altas y bajas IMSS, INFONAVIT, timbrado CFDI y cumplimiento laboral integral.</p>
-          <a href="#contacto" class="service-link">Más info <i class="fas fa-arrow-right"></i></a>
+          <p>Cálculo de nómina, altas y bajas, INFONAVIT, timbrado CFDI y cumplimiento laboral.</p>
+          <div class="bento-arrow"><i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="service-icon">
-            <i class="fas fa-scale-balanced"></i>
-          </div>
+        <div class="bento-card glass-morph" data-service="auditoria">
+          <div class="bento-number">04</div>
+          <div class="bento-icon"><i class="fas fa-scale-balanced"></i></div>
           <h3>Auditoría</h3>
-          <p>Auditorías financieras, fiscales y de cumplimiento para garantizar la transparencia y confiabilidad de tu información.</p>
-          <a href="#contacto" class="service-link">Más info <i class="fas fa-arrow-right"></i></a>
+          <p>Auditorías financieras, fiscales y de cumplimiento para máxima transparencia.</p>
+          <div class="bento-arrow"><i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="400">
-          <div class="service-icon">
-            <i class="fas fa-briefcase"></i>
-          </div>
+        <div class="bento-card glass-morph" data-service="consultoria">
+          <div class="bento-number">05</div>
+          <div class="bento-icon"><i class="fas fa-briefcase"></i></div>
           <h3>Consultoría Empresarial</h3>
-          <p>Asesoría estratégica para constitución de empresas, reestructuración societaria y optimización de procesos.</p>
-          <a href="#contacto" class="service-link">Más info <i class="fas fa-arrow-right"></i></a>
+          <p>Asesoría estratégica, constitución de empresas y optimización de procesos.</p>
+          <div class="bento-arrow"><i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="500">
-          <div class="service-icon">
-            <i class="fas fa-gavel"></i>
-          </div>
+        <div class="bento-card bento-lg glass-morph" data-service="defensa">
+          <div class="bento-number">06</div>
+          <div class="bento-icon"><i class="fas fa-gavel"></i></div>
           <h3>Defensa Fiscal</h3>
-          <p>Representación ante el SAT, recursos de revocación, juicios de nulidad y atención a requerimientos fiscales.</p>
-          <a href="#contacto" class="service-link">Más info <i class="fas fa-arrow-right"></i></a>
+          <p>Representación ante el SAT, recursos de revocación, juicios de nulidad y atención a requerimientos fiscales. Tu patrimonio protegido ante cualquier situación.</p>
+          <div class="bento-arrow"><i class="fas fa-arrow-right"></i></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========== NOSOTROS ========== -->
-  <section class="section nosotros" id="nosotros">
+  <section class="section section-dark" id="nosotros">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-visual">
-          <div class="about-card glass-card">
-            <div class="about-icon-grid">
-              <div class="about-icon-item">
-                <i class="fas fa-award"></i>
-                <span>Certificados</span>
-              </div>
-              <div class="about-icon-item">
-                <i class="fas fa-handshake"></i>
-                <span>Confianza</span>
-              </div>
-              <div class="about-icon-item">
-                <i class="fas fa-clock"></i>
-                <span>Puntualidad</span>
-              </div>
-              <div class="about-icon-item">
-                <i class="fas fa-lock"></i>
-                <span>Seguridad</span>
+      <div class="about-layout">
+        <div class="about-left">
+          <div class="section-label">
+            <div class="label-line"></div>
+            <span>Nosotros</span>
+          </div>
+          <h2 class="section-title reveal-text">¿Por qué más de<br>500 empresas eligen <span class="text-gold">OMC</span>?</h2>
+          <p class="about-desc reveal-text">Combinamos experiencia profesional con tecnología de vanguardia. No somos un despacho más — somos tu aliado estratégico.</p>
+
+          <div class="about-pillars">
+            <div class="pillar reveal-text">
+              <div class="pillar-num">01</div>
+              <div class="pillar-content">
+                <h4>Equipo Multidisciplinario</h4>
+                <p>Contadores, fiscalistas, auditores y abogados trabajando en conjunto por tu éxito.</p>
               </div>
             </div>
-          </div>
-          <div class="about-floating-card glass-card">
-            <i class="fas fa-star"></i>
-            <div>
-              <strong>4.9/5</strong>
-              <small>Calificación promedio</small>
+            <div class="pillar reveal-text">
+              <div class="pillar-num">02</div>
+              <div class="pillar-content">
+                <h4>Tecnología de Punta</h4>
+                <p>Plataformas digitales, reportes en tiempo real y comunicación directa 24/7.</p>
+              </div>
+            </div>
+            <div class="pillar reveal-text">
+              <div class="pillar-num">03</div>
+              <div class="pillar-content">
+                <h4>Atención Dedicada</h4>
+                <p>Un ejecutivo asignado exclusivo disponible para resolver cada una de tus dudas.</p>
+              </div>
+            </div>
+            <div class="pillar reveal-text">
+              <div class="pillar-num">04</div>
+              <div class="pillar-content">
+                <h4>Siempre Actualizados</h4>
+                <p>Al día con reformas fiscales, cambios legales y nuevas disposiciones del SAT.</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="about-text">
-          <span class="section-badge">Sobre Nosotros</span>
-          <h2>¿Por qué elegir a <span class="text-accent">OMC</span>?</h2>
-          <p>Somos un despacho contable comprometido con la excelencia. Combinamos experiencia profesional con tecnología de vanguardia para ofrecer soluciones que realmente impactan en tu negocio.</p>
-          <ul class="about-features">
-            <li>
-              <i class="fas fa-check"></i>
-              <div>
-                <strong>Equipo Multidisciplinario</strong>
-                <p>Contadores, fiscalistas, auditores y abogados trabajando en conjunto.</p>
+        <div class="about-right">
+          <div class="about-visual-stack">
+            <div class="visual-card glass-morph">
+              <div class="visual-grid">
+                <div class="vg-item"><i class="fas fa-award"></i><span>Certificados</span></div>
+                <div class="vg-item"><i class="fas fa-handshake"></i><span>Confianza</span></div>
+                <div class="vg-item"><i class="fas fa-bolt"></i><span>Eficiencia</span></div>
+                <div class="vg-item"><i class="fas fa-lock"></i><span>Seguridad</span></div>
               </div>
-            </li>
-            <li>
-              <i class="fas fa-check"></i>
-              <div>
-                <strong>Tecnología Avanzada</strong>
-                <p>Plataformas digitales para facturación, reportes en tiempo real y comunicación directa.</p>
+            </div>
+            <div class="visual-badge glass-morph">
+              <div class="badge-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
               </div>
-            </li>
-            <li>
-              <i class="fas fa-check"></i>
-              <div>
-                <strong>Atención Personalizada</strong>
-                <p>Cada cliente tiene un ejecutivo asignado disponible para resolver dudas al instante.</p>
-              </div>
-            </li>
-            <li>
-              <i class="fas fa-check"></i>
-              <div>
-                <strong>Actualización Constante</strong>
-                <p>Siempre al día con las reformas fiscales y cambios en la legislación.</p>
-              </div>
-            </li>
-          </ul>
+              <strong>4.9 de 5</strong>
+              <small>+120 reseñas verificadas</small>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========== RESULTADOS ========== -->
-  <section class="section resultados" id="resultados">
+  <section class="section" id="resultados">
     <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Nuestros Resultados</span>
-        <h2>Los números <span class="text-accent">hablan por sí solos</span></h2>
-        <p>Resultados reales que demuestran nuestro compromiso con cada cliente.</p>
+      <div class="section-top center">
+        <div class="section-label center">
+          <div class="label-line"></div>
+          <span>Resultados</span>
+        </div>
+        <h2 class="section-title reveal-text">Los números<br><span class="text-gold">hablan solos</span></h2>
       </div>
-      <div class="results-grid">
-        <div class="result-card glass-card">
-          <div class="result-icon"><i class="fas fa-building"></i></div>
-          <div class="result-number" data-count="500">0</div>
-          <div class="result-suffix">+</div>
-          <div class="result-label">Empresas Asesoradas</div>
+
+      <div class="stats-row">
+        <div class="stat-block reveal-text">
+          <div class="stat-num"><span data-count="500">0</span><span class="stat-plus">+</span></div>
+          <div class="stat-bar"><div class="stat-fill" style="width:90%"></div></div>
+          <div class="stat-name">Empresas Asesoradas</div>
         </div>
-        <div class="result-card glass-card">
-          <div class="result-icon"><i class="fas fa-file-signature"></i></div>
-          <div class="result-number" data-count="12000">0</div>
-          <div class="result-suffix">+</div>
-          <div class="result-label">Declaraciones Presentadas</div>
+        <div class="stat-divider"></div>
+        <div class="stat-block reveal-text">
+          <div class="stat-num"><span data-count="12000">0</span><span class="stat-plus">+</span></div>
+          <div class="stat-bar"><div class="stat-fill" style="width:95%"></div></div>
+          <div class="stat-name">Declaraciones Presentadas</div>
         </div>
-        <div class="result-card glass-card">
-          <div class="result-icon"><i class="fas fa-piggy-bank"></i></div>
-          <div class="result-number" data-count="35">0</div>
-          <div class="result-suffix">M+</div>
-          <div class="result-label">Pesos en Ahorro Fiscal</div>
+        <div class="stat-divider"></div>
+        <div class="stat-block reveal-text">
+          <div class="stat-num"><span data-count="35">0</span><span class="stat-plus">M+</span></div>
+          <div class="stat-bar"><div class="stat-fill" style="width:75%"></div></div>
+          <div class="stat-name">Pesos en Ahorro Fiscal</div>
         </div>
-        <div class="result-card glass-card">
-          <div class="result-icon"><i class="fas fa-trophy"></i></div>
-          <div class="result-number" data-count="15">0</div>
-          <div class="result-suffix"> años</div>
-          <div class="result-label">De Trayectoria</div>
+        <div class="stat-divider"></div>
+        <div class="stat-block reveal-text">
+          <div class="stat-num"><span data-count="15">0</span><span class="stat-plus"> años</span></div>
+          <div class="stat-bar"><div class="stat-fill" style="width:100%"></div></div>
+          <div class="stat-name">De Trayectoria</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========== PROCESO ========== -->
-  <section class="section proceso" id="proceso">
+  <section class="section section-dark" id="proceso">
     <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Nuestro Proceso</span>
-        <h2>De la consulta al <span class="text-accent">crecimiento</span></h2>
-        <p>Un proceso claro y transparente para que sepas exactamente qué esperar.</p>
+      <div class="section-top center">
+        <div class="section-label center">
+          <div class="label-line"></div>
+          <span>Proceso</span>
+        </div>
+        <h2 class="section-title reveal-text">De la consulta al<br><span class="text-gold">crecimiento</span></h2>
       </div>
-      <div class="process-timeline">
-        <div class="process-step glass-card">
-          <div class="step-number">01</div>
-          <div class="step-content">
-            <h3>Consulta Inicial</h3>
-            <p>Analizamos tu situación fiscal y contable actual para entender tus necesidades.</p>
-          </div>
-          <div class="step-icon"><i class="fas fa-comments"></i></div>
-        </div>
-        <div class="process-step glass-card">
-          <div class="step-number">02</div>
-          <div class="step-content">
-            <h3>Diagnóstico Fiscal</h3>
-            <p>Revisamos a detalle tu historial y detectamos áreas de oportunidad y riesgo.</p>
-          </div>
-          <div class="step-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
-        </div>
-        <div class="process-step glass-card">
-          <div class="step-number">03</div>
-          <div class="step-content">
-            <h3>Plan Estratégico</h3>
-            <p>Diseñamos un plan personalizado con estrategias fiscales y contables óptimas.</p>
-          </div>
-          <div class="step-icon"><i class="fas fa-route"></i></div>
-        </div>
-        <div class="process-step glass-card">
-          <div class="step-number">04</div>
-          <div class="step-content">
-            <h3>Implementación</h3>
-            <p>Ejecutamos el plan, gestionamos tus obligaciones y optimizamos tus procesos.</p>
-          </div>
-          <div class="step-icon"><i class="fas fa-rocket"></i></div>
-        </div>
-        <div class="process-step glass-card">
-          <div class="step-number">05</div>
-          <div class="step-content">
-            <h3>Seguimiento Continuo</h3>
-            <p>Monitoreo constante, reportes periódicos y ajustes según cambios en la ley.</p>
-          </div>
-          <div class="step-icon"><i class="fas fa-chart-line"></i></div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ========== TESTIMONIOS ========== -->
-  <section class="section testimonios" id="testimonios">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Testimonios</span>
-        <h2>Lo que dicen nuestros <span class="text-accent">clientes</span></h2>
-        <p>La confianza de nuestros clientes es nuestro mejor indicador de éxito.</p>
-      </div>
-      <div class="testimonials-slider">
-        <div class="testimonial-track" id="testimonialTrack">
-          <div class="testimonial-card glass-card">
-            <div class="testimonial-stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p>"OMC transformó la forma en que manejamos nuestras finanzas. Su equipo nos ayudó a reducir nuestra carga fiscal de manera significativa y legal."</p>
-            <div class="testimonial-author">
-              <div class="author-avatar"><i class="fas fa-user"></i></div>
-              <div>
-                <strong>Roberto Méndez</strong>
-                <small>CEO, Grupo Industrial del Norte</small>
-              </div>
-            </div>
+      <div class="process-horizontal">
+        <div class="process-line"><div class="process-progress" id="processProgress"></div></div>
+        <div class="process-steps">
+          <div class="p-step reveal-text">
+            <div class="p-step-dot"><span>01</span></div>
+            <h4>Consulta Inicial</h4>
+            <p>Analizamos tu situación fiscal y contable actual</p>
           </div>
-          <div class="testimonial-card glass-card">
-            <div class="testimonial-stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p>"Excelente atención y profesionalismo. Siempre están al pendiente de los cambios fiscales y nos mantienen informados. Muy recomendables."</p>
-            <div class="testimonial-author">
-              <div class="author-avatar"><i class="fas fa-user"></i></div>
-              <div>
-                <strong>María González</strong>
-                <small>Directora, Comercializadora MG</small>
-              </div>
-            </div>
+          <div class="p-step reveal-text">
+            <div class="p-step-dot"><span>02</span></div>
+            <h4>Diagnóstico</h4>
+            <p>Revisamos tu historial y detectamos oportunidades</p>
           </div>
-          <div class="testimonial-card glass-card">
-            <div class="testimonial-stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p>"Gracias a OMC pudimos resolver una situación compleja con el SAT. Su equipo de defensa fiscal es simplemente el mejor en el mercado."</p>
-            <div class="testimonial-author">
-              <div class="author-avatar"><i class="fas fa-user"></i></div>
-              <div>
-                <strong>Carlos Herrera</strong>
-                <small>Fundador, TechStart MX</small>
-              </div>
-            </div>
+          <div class="p-step reveal-text">
+            <div class="p-step-dot"><span>03</span></div>
+            <h4>Plan Estratégico</h4>
+            <p>Diseñamos un plan personalizado para tu empresa</p>
           </div>
-        </div>
-        <div class="slider-controls">
-          <button class="slider-btn" id="prevBtn" aria-label="Anterior">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <div class="slider-dots" id="sliderDots"></div>
-          <button class="slider-btn" id="nextBtn" aria-label="Siguiente">
-            <i class="fas fa-chevron-right"></i>
-          </button>
+          <div class="p-step reveal-text">
+            <div class="p-step-dot"><span>04</span></div>
+            <h4>Implementación</h4>
+            <p>Ejecutamos y optimizamos todos tus procesos</p>
+          </div>
+          <div class="p-step reveal-text">
+            <div class="p-step-dot"><span>05</span></div>
+            <h4>Seguimiento</h4>
+            <p>Monitoreo constante y reportes periódicos</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========== PLANES ========== -->
-  <section class="section planes" id="planes">
+  <section class="section" id="planes">
     <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Planes</span>
-        <h2>Paquetes diseñados para tu <span class="text-accent">negocio</span></h2>
-        <p>Elige el plan que mejor se adapte a las necesidades y tamaño de tu empresa.</p>
+      <div class="section-top center">
+        <div class="section-label center">
+          <div class="label-line"></div>
+          <span>Planes</span>
+        </div>
+        <h2 class="section-title reveal-text">Inversión que se<br><span class="text-gold">paga sola</span></h2>
       </div>
-      <div class="pricing-toggle-wrapper">
-        <span>Mensual</span>
-        <label class="toggle-switch">
+
+      <div class="pricing-switch">
+        <span class="sw-label">Mensual</span>
+        <label class="switch">
           <input type="checkbox" id="pricingToggle">
-          <span class="toggle-slider"></span>
+          <span class="switch-track"><span class="switch-thumb"></span></span>
         </label>
-        <span>Anual <small class="save-badge">Ahorra 20%</small></span>
+        <span class="sw-label">Anual <span class="sw-save">-20%</span></span>
       </div>
-      <div class="pricing-grid">
-        <div class="pricing-card glass-card">
-          <div class="pricing-header">
-            <span class="plan-name">Emprendedor</span>
-            <div class="price-monthly"><span class="price-amount">$3,500</span><span class="price-period">/mes</span></div>
-            <div class="price-annual" style="display:none"><span class="price-amount">$2,800</span><span class="price-period">/mes</span></div>
-            <p>Ideal para personas físicas y pequeños negocios</p>
-          </div>
-          <ul class="plan-features">
-            <li><i class="fas fa-check"></i> Contabilidad mensual</li>
-            <li><i class="fas fa-check"></i> Declaraciones mensuales</li>
-            <li><i class="fas fa-check"></i> Declaración anual</li>
-            <li><i class="fas fa-check"></i> Facturación electrónica</li>
-            <li><i class="fas fa-check"></i> Soporte por email</li>
-            <li class="disabled"><i class="fas fa-xmark"></i> Nómina</li>
-            <li class="disabled"><i class="fas fa-xmark"></i> Auditoría</li>
+
+      <div class="pricing-cards">
+        <div class="price-card glass-morph reveal-text">
+          <div class="price-tier">Emprendedor</div>
+          <div class="price-monthly"><span class="price-currency">$</span><span class="price-val">3,500</span><span class="price-freq">/mes</span></div>
+          <div class="price-annual" style="display:none"><span class="price-currency">$</span><span class="price-val">2,800</span><span class="price-freq">/mes</span></div>
+          <p class="price-desc">Personas físicas y pequeños negocios</p>
+          <ul class="price-list">
+            <li><i class="fas fa-check"></i>Contabilidad mensual</li>
+            <li><i class="fas fa-check"></i>Declaraciones mensuales</li>
+            <li><i class="fas fa-check"></i>Declaración anual</li>
+            <li><i class="fas fa-check"></i>Facturación CFDI</li>
+            <li><i class="fas fa-check"></i>Soporte email</li>
+            <li class="muted"><i class="fas fa-minus"></i>Nómina</li>
+            <li class="muted"><i class="fas fa-minus"></i>Auditoría</li>
           </ul>
-          <a href="#contacto" class="btn btn-glass btn-full">Elegir Plan</a>
+          <a href="#contacto" class="btn-outline btn-full magnetic-btn"><span>Seleccionar</span></a>
         </div>
-        <div class="pricing-card glass-card featured">
-          <div class="featured-badge">Más Popular</div>
-          <div class="pricing-header">
-            <span class="plan-name">PyME</span>
-            <div class="price-monthly"><span class="price-amount">$7,500</span><span class="price-period">/mes</span></div>
-            <div class="price-annual" style="display:none"><span class="price-amount">$6,000</span><span class="price-period">/mes</span></div>
-            <p>Para empresas en crecimiento que necesitan control total</p>
-          </div>
-          <ul class="plan-features">
-            <li><i class="fas fa-check"></i> Todo del plan Emprendedor</li>
-            <li><i class="fas fa-check"></i> Nómina hasta 15 empleados</li>
-            <li><i class="fas fa-check"></i> IMSS e INFONAVIT</li>
-            <li><i class="fas fa-check"></i> Estados financieros mensuales</li>
-            <li><i class="fas fa-check"></i> Planeación fiscal</li>
-            <li><i class="fas fa-check"></i> Soporte prioritario WhatsApp</li>
-            <li class="disabled"><i class="fas fa-xmark"></i> Auditoría externa</li>
+
+        <div class="price-card glass-morph featured reveal-text">
+          <div class="price-badge">Más Popular</div>
+          <div class="price-tier">PyME</div>
+          <div class="price-monthly"><span class="price-currency">$</span><span class="price-val">7,500</span><span class="price-freq">/mes</span></div>
+          <div class="price-annual" style="display:none"><span class="price-currency">$</span><span class="price-val">6,000</span><span class="price-freq">/mes</span></div>
+          <p class="price-desc">Empresas en crecimiento</p>
+          <ul class="price-list">
+            <li><i class="fas fa-check"></i>Todo del Emprendedor</li>
+            <li><i class="fas fa-check"></i>Nómina (hasta 15)</li>
+            <li><i class="fas fa-check"></i>IMSS e INFONAVIT</li>
+            <li><i class="fas fa-check"></i>Estados financieros</li>
+            <li><i class="fas fa-check"></i>Planeación fiscal</li>
+            <li><i class="fas fa-check"></i>Soporte WhatsApp</li>
+            <li class="muted"><i class="fas fa-minus"></i>Auditoría externa</li>
           </ul>
-          <a href="#contacto" class="btn btn-primary btn-full">Elegir Plan</a>
+          <a href="#contacto" class="btn-primary btn-full magnetic-btn"><span>Seleccionar</span><div class="btn-shine"></div></a>
         </div>
-        <div class="pricing-card glass-card">
-          <div class="pricing-header">
-            <span class="plan-name">Corporativo</span>
-            <div class="price-monthly"><span class="price-amount">$15,000</span><span class="price-period">/mes</span></div>
-            <div class="price-annual" style="display:none"><span class="price-amount">$12,000</span><span class="price-period">/mes</span></div>
-            <p>Solución completa para empresas medianas y grandes</p>
-          </div>
-          <ul class="plan-features">
-            <li><i class="fas fa-check"></i> Todo del plan PyME</li>
-            <li><i class="fas fa-check"></i> Nómina ilimitada</li>
-            <li><i class="fas fa-check"></i> Auditoría financiera anual</li>
-            <li><i class="fas fa-check"></i> Consultoría estratégica</li>
-            <li><i class="fas fa-check"></i> Defensa fiscal</li>
-            <li><i class="fas fa-check"></i> Ejecutivo asignado dedicado</li>
-            <li><i class="fas fa-check"></i> Reportes en tiempo real</li>
+
+        <div class="price-card glass-morph reveal-text">
+          <div class="price-tier">Corporativo</div>
+          <div class="price-monthly"><span class="price-currency">$</span><span class="price-val">15,000</span><span class="price-freq">/mes</span></div>
+          <div class="price-annual" style="display:none"><span class="price-currency">$</span><span class="price-val">12,000</span><span class="price-freq">/mes</span></div>
+          <p class="price-desc">Empresas medianas y grandes</p>
+          <ul class="price-list">
+            <li><i class="fas fa-check"></i>Todo del PyME</li>
+            <li><i class="fas fa-check"></i>Nómina ilimitada</li>
+            <li><i class="fas fa-check"></i>Auditoría anual</li>
+            <li><i class="fas fa-check"></i>Consultoría estratégica</li>
+            <li><i class="fas fa-check"></i>Defensa fiscal</li>
+            <li><i class="fas fa-check"></i>Ejecutivo dedicado</li>
+            <li><i class="fas fa-check"></i>Reportes tiempo real</li>
           </ul>
-          <a href="#contacto" class="btn btn-glass btn-full">Elegir Plan</a>
+          <a href="#contacto" class="btn-outline btn-full magnetic-btn"><span>Seleccionar</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIOS ========== -->
+  <section class="section section-dark" id="testimonios">
+    <div class="container">
+      <div class="section-top center">
+        <div class="section-label center">
+          <div class="label-line"></div>
+          <span>Testimonios</span>
+        </div>
+        <h2 class="section-title reveal-text">Historias de<br><span class="text-gold">confianza</span></h2>
+      </div>
+
+      <div class="testimonials-wrap">
+        <div class="testimonial-slider" id="testimonialTrack">
+          <div class="testi-card glass-morph">
+            <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
+            <p>"OMC transformó la forma en que manejamos nuestras finanzas. Redujeron nuestra carga fiscal de manera significativa y completamente legal."</p>
+            <div class="testi-author">
+              <div class="testi-avatar">RM</div>
+              <div>
+                <strong>Roberto Méndez</strong>
+                <span>CEO, Grupo Industrial del Norte</span>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card glass-morph">
+            <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
+            <p>"Excelente atención y profesionalismo. Siempre están al pendiente de los cambios fiscales y nos mantienen informados con anticipación."</p>
+            <div class="testi-author">
+              <div class="testi-avatar">MG</div>
+              <div>
+                <strong>María González</strong>
+                <span>Directora, Comercializadora MG</span>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card glass-morph">
+            <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
+            <p>"Gracias a OMC pudimos resolver una situación compleja con el SAT. Su equipo de defensa fiscal es simplemente el mejor del mercado."</p>
+            <div class="testi-author">
+              <div class="testi-avatar">CH</div>
+              <div>
+                <strong>Carlos Herrera</strong>
+                <span>Fundador, TechStart MX</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-controls">
+          <button class="testi-btn" id="prevBtn"><i class="fas fa-arrow-left"></i></button>
+          <div class="testi-dots" id="sliderDots"></div>
+          <button class="testi-btn" id="nextBtn"><i class="fas fa-arrow-right"></i></button>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========== EQUIPO ========== -->
-  <section class="section equipo" id="equipo">
+  <section class="section" id="equipo">
     <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Nuestro Equipo</span>
-        <h2>Profesionales que <span class="text-accent">respaldan</span> tu éxito</h2>
-        <p>Un equipo multidisciplinario con años de experiencia en el sector contable y fiscal.</p>
+      <div class="section-top center">
+        <div class="section-label center">
+          <div class="label-line"></div>
+          <span>Equipo</span>
+        </div>
+        <h2 class="section-title reveal-text">Expertos que<br><span class="text-gold">respaldan tu éxito</span></h2>
       </div>
-      <div class="team-grid">
-        <div class="team-card glass-card">
-          <div class="team-avatar">
-            <i class="fas fa-user-tie"></i>
-          </div>
+
+      <div class="team-cards">
+        <div class="team-member glass-morph reveal-text">
+          <div class="member-photo"><span>OM</span></div>
           <h3>C.P. Omar Martínez</h3>
-          <span class="team-role">Director General</span>
-          <p>15 años de experiencia en consultoría fiscal y planeación tributaria para empresas multinacionales.</p>
-          <div class="team-social">
+          <span class="member-role">Director General</span>
+          <p>15 años en consultoría fiscal para empresas multinacionales</p>
+          <div class="member-links">
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
             <a href="#"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
-        <div class="team-card glass-card">
-          <div class="team-avatar">
-            <i class="fas fa-user-tie"></i>
-          </div>
+        <div class="team-member glass-morph reveal-text">
+          <div class="member-photo"><span>PR</span></div>
           <h3>L.C. Patricia Ramírez</h3>
-          <span class="team-role">Directora de Auditoría</span>
-          <p>Especialista en auditoría financiera y de cumplimiento. Certificada por el IMCP con experiencia en Big Four.</p>
-          <div class="team-social">
+          <span class="member-role">Directora de Auditoría</span>
+          <p>Certificada IMCP con experiencia en Big Four</p>
+          <div class="member-links">
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
             <a href="#"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
-        <div class="team-card glass-card">
-          <div class="team-avatar">
-            <i class="fas fa-user-tie"></i>
-          </div>
+        <div class="team-member glass-morph reveal-text">
+          <div class="member-photo"><span>RF</span></div>
           <h3>Mtro. Ricardo Fuentes</h3>
-          <span class="team-role">Jefe de Fiscal</span>
-          <p>Maestría en Derecho Fiscal. Experto en defensa legal tributaria y resolución de controversias ante el SAT.</p>
-          <div class="team-social">
+          <span class="member-role">Jefe de Fiscal</span>
+          <p>Maestría en Derecho Fiscal. Experto en defensa tributaria</p>
+          <div class="member-links">
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
             <a href="#"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
-        <div class="team-card glass-card">
-          <div class="team-avatar">
-            <i class="fas fa-user-tie"></i>
-          </div>
+        <div class="team-member glass-morph reveal-text">
+          <div class="member-photo"><span>LC</span></div>
           <h3>C.P. Laura Castillo</h3>
-          <span class="team-role">Coordinadora de Nóminas</span>
-          <p>Especialista en derecho laboral y seguridad social. Gestión integral de nóminas para +200 empresas.</p>
-          <div class="team-social">
+          <span class="member-role">Coordinadora de Nóminas</span>
+          <p>Gestión integral de nóminas para +200 empresas</p>
+          <div class="member-links">
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
             <a href="#"><i class="fas fa-envelope"></i></a>
           </div>
@@ -533,225 +604,112 @@
   </section>
 
   <!-- ========== FAQ ========== -->
-  <section class="section faq-section" id="faq">
+  <section class="section section-dark" id="faq">
     <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Preguntas Frecuentes</span>
-        <h2>Resolvemos tus <span class="text-accent">dudas</span></h2>
-        <p>Las preguntas más comunes de nuestros clientes sobre nuestros servicios.</p>
-      </div>
-      <div class="faq-grid">
-        <div class="faq-item glass-card">
-          <button class="faq-question">
-            <span>¿Qué necesito para contratar sus servicios?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Solo necesitas tu constancia de situación fiscal, identificación oficial y los últimos estados de cuenta. Nosotros nos encargamos del resto, incluyendo la migración desde tu contador anterior si es necesario.</p>
+      <div class="faq-layout">
+        <div class="faq-left">
+          <div class="section-label">
+            <div class="label-line"></div>
+            <span>FAQ</span>
           </div>
+          <h2 class="section-title reveal-text">Preguntas<br><span class="text-gold">frecuentes</span></h2>
+          <p class="reveal-text">¿No encuentras tu respuesta? Contáctanos directamente.</p>
+          <a href="#contacto" class="btn-outline magnetic-btn" style="margin-top:24px"><span>Contactar</span></a>
         </div>
-        <div class="faq-item glass-card">
-          <button class="faq-question">
-            <span>¿Trabajan con empresas de cualquier tamaño?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Sí, atendemos desde personas físicas con actividad empresarial hasta corporativos con cientos de empleados. Cada plan se adapta a la complejidad y volumen de operaciones de tu negocio.</p>
+        <div class="faq-right">
+          <div class="faq-item glass-morph">
+            <button class="faq-question"><span>¿Qué necesito para contratar sus servicios?</span><div class="faq-icon"><span></span><span></span></div></button>
+            <div class="faq-answer"><p>Solo necesitas tu constancia de situación fiscal, identificación oficial y los últimos estados de cuenta. Nosotros nos encargamos del resto, incluyendo la migración desde tu contador anterior.</p></div>
           </div>
-        </div>
-        <div class="faq-item glass-card">
-          <button class="faq-question">
-            <span>¿Cómo manejan la confidencialidad de mi información?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Firmamos contratos de confidencialidad con cada cliente. Toda la información se maneja en servidores seguros con encriptación de nivel bancario y acceso restringido únicamente a tu equipo asignado.</p>
+          <div class="faq-item glass-morph">
+            <button class="faq-question"><span>¿Trabajan con empresas de cualquier tamaño?</span><div class="faq-icon"><span></span><span></span></div></button>
+            <div class="faq-answer"><p>Sí, desde personas físicas hasta corporativos con cientos de empleados. Cada plan se adapta a la complejidad de tu negocio.</p></div>
           </div>
-        </div>
-        <div class="faq-item glass-card">
-          <button class="faq-question">
-            <span>¿Puedo cambiar de plan en cualquier momento?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Por supuesto. Puedes escalar o reducir tu plan cuando lo necesites. Los cambios se aplican al siguiente periodo de facturación sin penalizaciones ni cargos adicionales.</p>
+          <div class="faq-item glass-morph">
+            <button class="faq-question"><span>¿Cómo manejan la confidencialidad?</span><div class="faq-icon"><span></span><span></span></div></button>
+            <div class="faq-answer"><p>Firmamos contratos de confidencialidad. Toda la información se maneja en servidores seguros con encriptación bancaria y acceso restringido.</p></div>
           </div>
-        </div>
-        <div class="faq-item glass-card">
-          <button class="faq-question">
-            <span>¿Qué pasa si tengo un problema urgente con el SAT?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Contamos con un equipo de defensa fiscal especializado. En caso de requerimientos, auditorías o multas del SAT, actuamos de inmediato con representación legal completa y estrategias de resolución efectivas.</p>
+          <div class="faq-item glass-morph">
+            <button class="faq-question"><span>¿Puedo cambiar de plan?</span><div class="faq-icon"><span></span><span></span></div></button>
+            <div class="faq-answer"><p>Por supuesto. Puedes escalar o reducir tu plan cuando lo necesites. Los cambios se aplican al siguiente periodo sin penalizaciones.</p></div>
           </div>
-        </div>
-        <div class="faq-item glass-card">
-          <button class="faq-question">
-            <span>¿Ofrecen servicios de facturación electrónica?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Sí, todos nuestros planes incluyen emisión de CFDI. Utilizamos plataformas certificadas por el SAT y te capacitamos para que puedas emitir facturas de forma autónoma cuando lo necesites.</p>
+          <div class="faq-item glass-morph">
+            <button class="faq-question"><span>¿Qué pasa si tengo un problema con el SAT?</span><div class="faq-icon"><span></span><span></span></div></button>
+            <div class="faq-answer"><p>Contamos con un equipo de defensa fiscal. Ante requerimientos, auditorías o multas, actuamos de inmediato con representación legal completa.</p></div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== BLOG/RECURSOS ========== -->
-  <section class="section blog" id="blog">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Blog y Recursos</span>
-        <h2>Mantente <span class="text-accent">informado</span></h2>
-        <p>Artículos, guías y actualizaciones sobre el mundo fiscal y contable en México.</p>
-      </div>
-      <div class="blog-grid">
-        <article class="blog-card glass-card">
-          <div class="blog-img">
-            <div class="blog-img-placeholder">
-              <i class="fas fa-newspaper"></i>
-            </div>
-            <span class="blog-category">Fiscal</span>
-          </div>
-          <div class="blog-body">
-            <div class="blog-meta">
-              <span><i class="fas fa-calendar"></i> Mar 15, 2026</span>
-              <span><i class="fas fa-clock"></i> 5 min</span>
-            </div>
-            <h3>Reforma Fiscal 2026: Lo que tu empresa necesita saber</h3>
-            <p>Analizamos los cambios más importantes de la reforma fiscal y cómo impactan a las PyMEs mexicanas.</p>
-            <a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-        <article class="blog-card glass-card">
-          <div class="blog-img">
-            <div class="blog-img-placeholder">
-              <i class="fas fa-calculator"></i>
-            </div>
-            <span class="blog-category">Contabilidad</span>
-          </div>
-          <div class="blog-body">
-            <div class="blog-meta">
-              <span><i class="fas fa-calendar"></i> Feb 28, 2026</span>
-              <span><i class="fas fa-clock"></i> 4 min</span>
-            </div>
-            <h3>5 errores contables que pueden costarte miles de pesos</h3>
-            <p>Los errores más comunes en la contabilidad de pequeñas empresas y cómo evitarlos desde hoy.</p>
-            <a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-        <article class="blog-card glass-card">
-          <div class="blog-img">
-            <div class="blog-img-placeholder">
-              <i class="fas fa-receipt"></i>
-            </div>
-            <span class="blog-category">SAT</span>
-          </div>
-          <div class="blog-body">
-            <div class="blog-meta">
-              <span><i class="fas fa-calendar"></i> Feb 10, 2026</span>
-              <span><i class="fas fa-clock"></i> 6 min</span>
-            </div>
-            <h3>Guía completa: Carta Porte 3.0 obligatoria</h3>
-            <p>Todo lo que necesitas saber sobre el complemento Carta Porte y sus nuevos requisitos obligatorios.</p>
-            <a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CTA BANNER ========== -->
-  <section class="section cta-banner">
-    <div class="container">
-      <div class="cta-content glass-card">
-        <div class="cta-text">
-          <h2>¿Listo para dejar tus finanzas en manos de <span class="text-accent">expertos</span>?</h2>
-          <p>Agenda una consulta gratuita de 30 minutos y descubre cómo podemos optimizar la situación fiscal de tu empresa.</p>
-        </div>
-        <div class="cta-actions">
-          <a href="#contacto" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Agendar Consulta Gratis</a>
-          <a href="tel:5551234567" class="btn btn-glass"><i class="fas fa-phone"></i> Llamar Ahora</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========== CONTACTO ========== -->
-  <section class="section contacto" id="contacto">
+  <section class="section" id="contacto">
     <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info">
-          <span class="section-badge">Contacto</span>
-          <h2>¿Listo para <span class="text-accent">crecer</span>?</h2>
-          <p>Agenda tu consulta gratuita y descubre cómo podemos ayudarte a optimizar tus finanzas.</p>
-          <div class="contact-details">
-            <div class="contact-item glass-card">
+      <div class="contact-layout">
+        <div class="contact-left">
+          <div class="section-label">
+            <div class="label-line"></div>
+            <span>Contacto</span>
+          </div>
+          <h2 class="section-title reveal-text">Hablemos de tu<br><span class="text-gold">próximo paso</span></h2>
+          <p class="reveal-text">Agenda tu consulta gratuita y descubre cómo podemos optimizar tus finanzas.</p>
+
+          <div class="contact-cards">
+            <div class="c-card glass-morph">
               <i class="fas fa-phone"></i>
-              <div>
-                <strong>Teléfono</strong>
-                <span>(555) 123-4567</span>
-              </div>
+              <div><strong>Teléfono</strong><span>(555) 123-4567</span></div>
             </div>
-            <div class="contact-item glass-card">
+            <div class="c-card glass-morph">
               <i class="fas fa-envelope"></i>
-              <div>
-                <strong>Email</strong>
-                <span>contacto@omc.com.mx</span>
-              </div>
+              <div><strong>Email</strong><span>contacto@omc.com.mx</span></div>
             </div>
-            <div class="contact-item glass-card">
+            <div class="c-card glass-morph">
               <i class="fas fa-location-dot"></i>
-              <div>
-                <strong>Oficinas</strong>
-                <span>Av. Reforma 222, Col. Juárez, CDMX</span>
-              </div>
+              <div><strong>Oficinas</strong><span>Av. Reforma 222, CDMX</span></div>
             </div>
-            <div class="contact-item glass-card">
+            <div class="c-card glass-morph">
               <i class="fas fa-clock"></i>
-              <div>
-                <strong>Horario</strong>
-                <span>Lun - Vie: 9:00 - 18:00</span>
-              </div>
+              <div><strong>Horario</strong><span>Lun - Vie: 9:00 - 18:00</span></div>
             </div>
           </div>
         </div>
-        <div class="contact-form-wrapper glass-card">
-          <form class="contact-form" id="contactForm">
+
+        <div class="contact-right">
+          <form class="contact-form glass-morph" id="contactForm">
             <div class="form-group">
+              <input type="text" id="nombre" placeholder=" " required>
               <label for="nombre">Nombre completo</label>
-              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
             </div>
             <div class="form-row">
               <div class="form-group">
+                <input type="email" id="email" placeholder=" " required>
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
               </div>
               <div class="form-group">
+                <input type="tel" id="telefono" placeholder=" ">
                 <label for="telefono">Teléfono</label>
-                <input type="tel" id="telefono" name="telefono" placeholder="(555) 000-0000">
               </div>
             </div>
             <div class="form-group">
-              <label for="servicio">Servicio de interés</label>
-              <select id="servicio" name="servicio">
-                <option value="">Selecciona un servicio</option>
+              <select id="servicio" required>
+                <option value="" disabled selected></option>
                 <option value="contabilidad">Contabilidad General</option>
                 <option value="fiscal">Fiscal y Tributario</option>
                 <option value="nominas">Nóminas y IMSS</option>
                 <option value="auditoria">Auditoría</option>
-                <option value="consultoria">Consultoría Empresarial</option>
+                <option value="consultoria">Consultoría</option>
                 <option value="defensa">Defensa Fiscal</option>
               </select>
+              <label for="servicio">Servicio de interés</label>
             </div>
             <div class="form-group">
-              <label for="mensaje">Mensaje</label>
-              <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos sobre tu situación..."></textarea>
+              <textarea id="mensaje" rows="4" placeholder=" "></textarea>
+              <label for="mensaje">Tu mensaje</label>
             </div>
-            <button type="submit" class="btn btn-primary btn-full">
-              <i class="fas fa-paper-plane"></i> Enviar Mensaje
+            <button type="submit" class="btn-primary btn-full magnetic-btn">
+              <span>Enviar Mensaje</span>
+              <i class="fas fa-paper-plane"></i>
+              <div class="btn-shine"></div>
             </button>
           </form>
         </div>
@@ -762,46 +720,47 @@
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-top">
         <div class="footer-brand">
           <a href="#" class="nav-logo">
-            <span class="logo-icon"><i class="fas fa-chart-line"></i></span>
-            <span class="logo-text">OMC <small>S.A.S De C.V</small></span>
+            <div class="logo-mark">
+              <svg viewBox="0 0 40 40" fill="none">
+                <rect x="2" y="2" width="36" height="36" rx="8" stroke="url(#logoGrad2)" stroke-width="2"/>
+                <path d="M12 20L18 14L26 22L20 28Z" fill="url(#logoGrad2)"/>
+                <defs><linearGradient id="logoGrad2" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#d4a853"/><stop offset="100%" stop-color="#f0d78c"/></linearGradient></defs>
+              </svg>
+            </div>
+            <div class="logo-text">
+              <span class="logo-name">OMC</span>
+              <span class="logo-sub">S.A.S De C.V</span>
+            </div>
           </a>
-          <p>Despacho contable profesional comprometido con el crecimiento de tu empresa.</p>
-          <div class="footer-social">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          </div>
+          <p>Despacho contable de nueva generación comprometido con el crecimiento de tu empresa.</p>
         </div>
-        <div class="footer-links">
+        <div class="footer-col">
           <h4>Servicios</h4>
-          <ul>
-            <li><a href="#servicios">Contabilidad</a></li>
-            <li><a href="#servicios">Fiscal</a></li>
-            <li><a href="#servicios">Nóminas</a></li>
-            <li><a href="#servicios">Auditoría</a></li>
-            <li><a href="#servicios">Consultoría</a></li>
-          </ul>
+          <a href="#servicios">Contabilidad</a>
+          <a href="#servicios">Fiscal</a>
+          <a href="#servicios">Nóminas</a>
+          <a href="#servicios">Auditoría</a>
+          <a href="#servicios">Consultoría</a>
         </div>
-        <div class="footer-links">
+        <div class="footer-col">
           <h4>Empresa</h4>
-          <ul>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#resultados">Resultados</a></li>
-            <li><a href="#testimonios">Testimonios</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-          </ul>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#resultados">Resultados</a>
+          <a href="#equipo">Equipo</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contacto">Contacto</a>
         </div>
-        <div class="footer-newsletter">
-          <h4>Boletín Fiscal</h4>
-          <p>Recibe actualizaciones sobre cambios fiscales y tips contables.</p>
-          <form class="newsletter-form">
-            <input type="email" placeholder="tu@email.com">
-            <button type="submit"><i class="fas fa-arrow-right"></i></button>
-          </form>
+        <div class="footer-col">
+          <h4>Síguenos</h4>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
         </div>
       </div>
       <div class="footer-bottom">
@@ -811,8 +770,9 @@
   </footer>
 
   <!-- WhatsApp Float -->
-  <a href="https://wa.me/5551234567" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <a href="https://wa.me/5551234567" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
+    <span class="wa-pulse"></span>
   </a>
 
   <script src="js/main.js"></script>
