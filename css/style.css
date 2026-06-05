@@ -451,6 +451,13 @@ body {
   margin-block: var(--s-5) var(--s-5);
 }
 .hero-title .line { display: block; overflow: hidden; }
+.hero-title .line-inner {
+  display: block;
+  transform: translateY(110%);
+  animation: heroLineUp 1.05s cubic-bezier(0.22, 1, 0.36, 1) calc(0.35s + var(--d, 0) * 0.12s) forwards;
+  will-change: transform;
+}
+@keyframes heroLineUp { to { transform: translateY(0); } }
 .hero-title em {
   font-style: italic;
   color: var(--emerald);
@@ -1056,6 +1063,25 @@ body {
   padding-top: var(--s-5);
 }
 .foot-bar .micro { color: rgba(var(--paper-edge-rgb), 0.45); }
+
+/* ---------- HERO ENTRY (CSS-only, JS-independent) ---------- */
+.hero .eyebrow,
+.hero-lead,
+.hero-actions,
+.hero-meta,
+.hero-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hero .eyebrow   { animation-delay: 0.25s; }
+.hero-lead       { animation-delay: 0.75s; }
+.hero-actions    { animation-delay: 0.95s; }
+.hero-meta       { animation-delay: 1.10s; }
+.hero-card       { animation-delay: 1.30s; }
+@keyframes heroFadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
 
 /* ---------- REVEAL UTILITIES ---------- */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }

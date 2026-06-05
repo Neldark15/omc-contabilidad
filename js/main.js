@@ -164,20 +164,6 @@
   if (!reduceMotion && window.gsap && window.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
 
-    /* --- Lightweight line-split utility (manual, no SplitText plugin) --- */
-    function splitLines(el) {
-      const html = el.innerHTML;
-      // Wrap each .line child in inner span we can animate
-      el.querySelectorAll('.line').forEach((line) => {
-        const inner = document.createElement('span');
-        inner.className = 'line-inner';
-        inner.style.cssText = 'display:block;will-change:transform;';
-        while (line.firstChild) inner.appendChild(line.firstChild);
-        line.style.cssText = 'display:block;overflow:hidden;';
-        line.appendChild(inner);
-      });
-      return el.querySelectorAll('.line-inner');
-    }
     function splitWords(el) {
       const text = el.textContent;
       el.textContent = '';
@@ -198,46 +184,36 @@
       return words;
     }
 
-    /* 1 · Hero H1 — line stagger reveal */
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-      const lines = splitLines(heroTitle);
-      gsap.set(lines, { yPercent: 110 });
-      gsap.to(lines, {
-        yPercent: 0,
-        duration: 1.1,
-        stagger: 0.12,
-        ease: 'expo.out',
-        delay: 0.4,
-      });
-    }
-
-    /* Hero supporting reveals */
-    gsap.from('.hero .eyebrow, .hero-lead, .hero-actions, .hero-meta, .hero-card', {
-      opacity: 0, y: 24,
-      duration: 1, stagger: 0.12, ease: 'expo.out',
-      delay: 0.9,
-    });
+    /* Hero entry handled in CSS (animation on .line-inner and .hero descendants).
+       JS only adds below-the-fold scroll reveals. */
 
     /* 2 · Section H2 — word-by-word stagger */
     document.querySelectorAll('.section-title').forEach((el) => {
       if (el.closest('.hero')) return;
       const words = splitWords(el);
-      gsap.set(words, { yPercent: 60, opacity: 0 });
-      gsap.to(words, {
-        yPercent: 0, opacity: 1,
-        duration: 0.85, stagger: 0.04, ease: 'expo.out',
-        scrollTrigger: { trigger: el, start: 'top 82%' },
-      });
+      gsap.fromTo(words,
+        { yPercent: 60, opacity: 0 },
+        {
+          yPercent: 0, opacity: 1,
+          duration: 0.85, stagger: 0.04, ease: 'expo.out',
+          immediateRender: false,
+          scrollTrigger: { trigger: el, start: 'top 82%' },
+        }
+      );
     });
 
-    /* Generic reveals: section-lead, .eyebrow not in hero */
+    /* Generic reveals: section-lead and others — fromTo with immediateRender:false
+       so elements stay in CSS default state until they enter viewport */
     gsap.utils.toArray('.section-lead, .about-stats > div, .results-grid > article, .plan, .team-card, .faq-item, .contact-list > div, .contact-form').forEach((el) => {
-      gsap.from(el, {
-        opacity: 0, y: 30,
-        duration: 0.9, ease: 'expo.out',
-        scrollTrigger: { trigger: el, start: 'top 88%' },
-      });
+      gsap.fromTo(el,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1, y: 0,
+          duration: 0.9, ease: 'expo.out',
+          immediateRender: false,
+          scrollTrigger: { trigger: el, start: 'top 88%' },
+        }
+      );
     });
 
     /* 3 · Ledger quote — char-by-char scrub */
@@ -282,6 +258,7 @@
             opacity: 1, y: 0,
             duration: 0.6,
             ease: 'expo.out',
+            immediateRender: false,
             scrollTrigger: {
               trigger: panel,
               start: 'top 80%',
@@ -290,7 +267,6 @@
             },
           }
         );
-        // Subtle number scale-in
         const num = panel.querySelector('.service-num');
         if (num) {
           gsap.fromTo(num,
@@ -298,6 +274,7 @@
             {
               letterSpacing: '-0.04em', opacity: 1,
               duration: 0.6,
+              immediateRender: false,
               scrollTrigger: { trigger: panel, start: 'top 75%' },
             }
           );
@@ -306,22 +283,30 @@
     } else if (servicesSection && panels.length) {
       // Mobile: simple reveal
       panels.forEach((panel) => {
-        gsap.from(panel, {
-          opacity: 0, y: 24,
-          duration: 0.7, ease: 'expo.out',
-          scrollTrigger: { trigger: panel, start: 'top 90%' },
-        });
+        gsap.fromTo(panel,
+          { opacity: 0, y: 24 },
+          {
+            opacity: 1, y: 0,
+            duration: 0.7, ease: 'expo.out',
+            immediateRender: false,
+            scrollTrigger: { trigger: panel, start: 'top 90%' },
+          }
+        );
       });
     }
 
     /* Big-number scrubs (results-grid) */
     gsap.utils.toArray('.result-num, .result-hero-num, .stat').forEach((el) => {
-      gsap.from(el, {
-        opacity: 0, y: 40,
-        duration: 1,
-        ease: 'expo.out',
-        scrollTrigger: { trigger: el, start: 'top 85%' },
-      });
+      gsap.fromTo(el,
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1, y: 0,
+          duration: 1,
+          ease: 'expo.out',
+          immediateRender: false,
+          scrollTrigger: { trigger: el, start: 'top 85%' },
+        }
+      );
     });
 
     /* Hero coin gentle parallax */
@@ -339,6 +324,21 @@
     // reduced motion: make sure splits/hidden elements are visible
     document.querySelectorAll('.line').forEach((l) => { l.style.overflow = 'visible'; });
   }
+
+  /* SAFETY FALLBACK — if any inline gsap state remains hidden after 4s,
+     force-clear it. Guarantees content visibility even if ticker stalls. */
+  setTimeout(() => {
+    const stuck = document.querySelectorAll(
+      '.section-lead, .about-stats > div, .results-grid > article, .plan, .team-card, .faq-item, .contact-list > div, .contact-form, .service-panel, .result-num, .result-hero-num, .stat, .section-title .w'
+    );
+    stuck.forEach((el) => {
+      const cs = getComputedStyle(el);
+      if (parseFloat(cs.opacity) < 0.5) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      }
+    });
+  }, 4000);
 
   /* ================================================================
      FAQ accordion
