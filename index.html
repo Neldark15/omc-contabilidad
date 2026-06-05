@@ -1,780 +1,732 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-SV">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OMC S.A.S De C.V | Consultoría Contable y Fiscal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F4F1EA">
+  <meta name="description" content="OMC S.A.S. de C.V. — Despacho de consultoría contable, fiscal y patrimonial en El Salvador. Más de 15 años acompañando empresas con servicios DGII, ISSS, DTE y planeación tributaria.">
+  <title>OMC S.A.S. de C.V. · Consultoría contable y fiscal en El Salvador</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-  <!-- Cursor follower -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-glow" id="cursorGlow"></div>
+  <!-- ===== CURSOR ===== -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
 
-  <!-- Loader -->
-  <div class="loader" id="loader">
+  <!-- ===== LOADER ===== -->
+  <div class="loader" id="loader" aria-hidden="true">
     <div class="loader-inner">
-      <div class="loader-logo">OMC</div>
-      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <div class="loader-mark">OMC</div>
+      <div class="loader-rule"><span></span></div>
     </div>
   </div>
 
-  <!-- ========== NAVBAR ========== -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#" class="nav-logo">
-        <div class="logo-mark">
-          <svg viewBox="0 0 40 40" fill="none">
-            <rect x="2" y="2" width="36" height="36" rx="8" stroke="url(#logoGrad)" stroke-width="2"/>
-            <path d="M12 20L18 14L26 22L20 28Z" fill="url(#logoGrad)"/>
-            <defs>
-              <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40">
-                <stop offset="0%" stop-color="#d4a853"/>
-                <stop offset="100%" stop-color="#f0d78c"/>
-              </linearGradient>
-            </defs>
+  <!-- ===== NAVBAR ===== -->
+  <header class="nav" id="nav">
+    <div class="container nav-row">
+      <a href="#inicio" class="nav-brand" aria-label="OMC inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+            <rect x="3.5" y="3.5" width="25" height="25" rx="3"/>
+            <path d="M9 22V10l7 8 7-8v12"/>
           </svg>
-        </div>
-        <div class="logo-text">
-          <span class="logo-name">OMC</span>
-          <span class="logo-sub">S.A.S De C.V</span>
-        </div>
+        </span>
+        <span class="brand-word">
+          <span class="brand-name">OMC</span>
+          <span class="brand-sub">S.A.S. de C.V.</span>
+        </span>
       </a>
 
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="#inicio" class="nav-link" data-text="Inicio">Inicio</a></li>
-        <li><a href="#servicios" class="nav-link" data-text="Servicios">Servicios</a></li>
-        <li><a href="#nosotros" class="nav-link" data-text="Nosotros">Nosotros</a></li>
-        <li><a href="#resultados" class="nav-link" data-text="Resultados">Resultados</a></li>
-        <li><a href="#planes" class="nav-link" data-text="Planes">Planes</a></li>
-        <li><a href="#equipo" class="nav-link" data-text="Equipo">Equipo</a></li>
-        <li><a href="#faq" class="nav-link" data-text="FAQ">FAQ</a></li>
-      </ul>
+      <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#resultados" class="nav-link">Resultados</a>
+        <a href="#planes" class="nav-link">Planes</a>
+        <a href="#equipo" class="nav-link">Equipo</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
 
-      <div class="nav-right">
-        <a href="#contacto" class="nav-cta magnetic-btn">
-          <span>Solicitar Consulta</span>
-          <div class="btn-shine"></div>
+      <div class="nav-end">
+        <a href="#contacto" class="btn btn-primary magnetic">
+          <span>Solicitar consulta</span>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <button class="nav-toggle" id="navToggle" aria-label="Menu">
-          <div class="toggle-line"></div>
-          <div class="toggle-line"></div>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+          <span></span><span></span>
         </button>
       </div>
     </div>
-  </nav>
+  </header>
 
-  <!-- ========== HERO ========== -->
-  <section class="hero" id="inicio">
-    <div class="hero-grain"></div>
-    <div class="hero-mesh">
-      <div class="mesh-orb mesh-1"></div>
-      <div class="mesh-orb mesh-2"></div>
-      <div class="mesh-orb mesh-3"></div>
-    </div>
+  <main>
 
-    <div class="container hero-grid">
-      <div class="hero-left">
-        <div class="hero-tag reveal-text">
-          <div class="tag-dot"></div>
-          <span>Excelencia en consultoría contable y fiscal</span>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio">
+      <div class="paper-grain" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow reveal-inline">
+            <span>Despacho contable · El Salvador</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="line">La solidez financiera</span>
+            <span class="line">que su empresa merece,</span>
+            <span class="line"><em>con criterio salvadoreño.</em></span>
+          </h1>
+
+          <p class="hero-lead">
+            <!-- TODO: ajustar cifras a las reales -->
+            Más de 15 años acompañando a empresas y profesionales en El Salvador con consultoría contable,
+            cumplimiento ante la DGII, planeación tributaria, planillas ISSS y facturación electrónica DTE.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contacto" class="btn btn-primary magnetic">
+              <span>Agendar consultoría</span>
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#servicios" class="btn btn-secondary magnetic">
+              <span>Conocer servicios</span>
+            </a>
+          </div>
+
+          <dl class="hero-meta">
+            <div>
+              <dt class="micro">Trayectoria</dt>
+              <dd class="num">15<span class="num-sub">+ años</span></dd>
+            </div>
+            <div>
+              <dt class="micro">Empresas atendidas</dt>
+              <dd class="num">300<span class="num-sub">+</span></dd>
+            </div>
+            <div>
+              <dt class="micro">Cumplimiento DGII</dt>
+              <dd class="num">100<span class="num-sub">%</span></dd>
+            </div>
+          </dl>
         </div>
 
-        <h1 class="hero-title">
-          <span class="title-line reveal-text">La solidez financiera</span>
-          <span class="title-line reveal-text">que su empresa requiere,</span>
-          <span class="title-line accent-line reveal-text">
-            <span class="rotating-words" id="rotatingWords">
-              <span class="word active">con precisión</span>
-              <span class="word">con estrategia</span>
-              <span class="word">con respaldo</span>
-              <span class="word">con visión</span>
+        <aside class="hero-visual" aria-hidden="true">
+          <div class="coin-stage" id="coinStage">
+            <svg class="coin-fallback" viewBox="0 0 320 320" aria-hidden="true">
+              <defs>
+                <radialGradient id="cg" cx="50%" cy="40%" r="60%">
+                  <stop offset="0%" stop-color="#E8C290"/>
+                  <stop offset="55%" stop-color="#B8794A"/>
+                  <stop offset="100%" stop-color="#6B3F1F"/>
+                </radialGradient>
+              </defs>
+              <circle cx="160" cy="160" r="140" fill="url(#cg)"/>
+              <circle cx="160" cy="160" r="140" fill="none" stroke="#3A2210" stroke-width="2" opacity="0.4"/>
+              <circle cx="160" cy="160" r="120" fill="none" stroke="#F4F1EA" stroke-width="1" opacity="0.35"/>
+              <text x="160" y="172" text-anchor="middle" font-family="Fraunces, serif" font-weight="500" font-size="56" fill="#3A2210" opacity="0.65">OMC</text>
+            </svg>
+          </div>
+
+          <article class="paper-card hero-card">
+            <header class="paper-card-top">
+              <span class="micro">Estado DGII</span>
+              <span class="dot dot-ok" aria-hidden="true"></span>
+            </header>
+            <p class="paper-card-title">Declaración mensual presentada</p>
+            <p class="paper-card-meta">
+              Cliente sample · <time datetime="2026-06-01">01 jun 2026</time> · IVA + Pago a cuenta
+            </p>
+            <footer class="paper-card-foot">
+              <span class="mono">DTE-03-0000XXXX</span>
+            </footer>
+          </article>
+        </aside>
+      </div>
+
+      <a href="#servicios" class="hero-scroll" aria-label="Desplazarse a servicios">
+        <span class="micro">Continuar</span>
+        <span class="hero-scroll-rule" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Contabilidad general</span><span class="sep">·</span>
+        <span>Tributario y fiscal</span><span class="sep">·</span>
+        <span>Planillas e ISSS</span><span class="sep">·</span>
+        <span>Auditoría financiera</span><span class="sep">·</span>
+        <span>Consultoría empresarial</span><span class="sep">·</span>
+        <span>Facturación electrónica DTE</span><span class="sep">·</span>
+        <span>Defensa fiscal</span><span class="sep">·</span>
+        <span>Planeación tributaria</span><span class="sep copper">★</span>
+        <span>Contabilidad general</span><span class="sep">·</span>
+        <span>Tributario y fiscal</span><span class="sep">·</span>
+        <span>Planillas e ISSS</span><span class="sep">·</span>
+        <span>Auditoría financiera</span><span class="sep">·</span>
+        <span>Consultoría empresarial</span><span class="sep">·</span>
+        <span>Facturación electrónica DTE</span><span class="sep">·</span>
+        <span>Defensa fiscal</span><span class="sep">·</span>
+        <span>Planeación tributaria</span><span class="sep copper">★</span>
+      </div>
+    </div>
+
+    <!-- ===== SERVICIOS (pin-scrub) ===== -->
+    <section class="services" id="servicios">
+      <div class="container services-grid">
+        <div class="services-left">
+          <div class="services-left-inner">
+            <span class="eyebrow"><span>Servicios</span></span>
+            <h2 class="section-title">
+              Seis disciplinas,<br>
+              <em>una sola firma.</em>
+            </h2>
+            <p class="section-lead">
+              Resolvemos el ciclo contable completo de su empresa con criterio fiscal salvadoreño,
+              documentación auditable y respuesta directa a la DGII.
+            </p>
+            <a href="#contacto" class="btn-ghost">
+              <span>Solicitar propuesta</span>
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <ol class="services-right">
+          <li class="service-panel" data-svc="01">
+            <div class="service-num">01</div>
+            <h3>Contabilidad general</h3>
+            <p>Registro contable diario, estados financieros mensuales bajo NIIF para PyMES, balanzas y reportes ejecutivos listos para gerencia y bancos.</p>
+            <ul class="service-bullets">
+              <li>Cierres mensuales y anuales</li>
+              <li>Conciliaciones bancarias</li>
+              <li>Reportes para junta directiva</li>
+            </ul>
+          </li>
+          <li class="service-panel" data-svc="02">
+            <div class="service-num">02</div>
+            <h3>Tributario y fiscal</h3>
+            <p>Declaraciones de IVA, pago a cuenta, ISR anual, retenciones y planeación tributaria conforme al Código Tributario y normativa DGII vigente.</p>
+            <ul class="service-bullets">
+              <li>IVA mensual y anual</li>
+              <li>ISR personas jurídicas y naturales</li>
+              <li>Atención de requerimientos DGII</li>
+            </ul>
+          </li>
+          <li class="service-panel" data-svc="03">
+            <div class="service-num">03</div>
+            <h3>Planillas e ISSS</h3>
+            <p>Cálculo y timbrado de planillas, planilla ISSS, AFP Crecer / Confía, INSAFORP, retenciones de renta y certificaciones de ingresos.</p>
+            <ul class="service-bullets">
+              <li>Planilla quincenal o mensual</li>
+              <li>Inscripciones y movimientos ISSS</li>
+              <li>Liquidaciones de personal</li>
+            </ul>
+          </li>
+          <li class="service-panel" data-svc="04">
+            <div class="service-num">04</div>
+            <h3>Auditoría</h3>
+            <p>Auditoría financiera externa, fiscal y operativa con metodología documentada y dictamen avalado por contador público autorizado.</p>
+            <ul class="service-bullets">
+              <li>Dictamen fiscal y financiero</li>
+              <li>Auditoría interna de procesos</li>
+              <li>Revisiones especiales por solicitud</li>
+            </ul>
+          </li>
+          <li class="service-panel" data-svc="05">
+            <div class="service-num">05</div>
+            <h3>Consultoría empresarial</h3>
+            <p>Estructuración societaria, costeo, presupuestos, flujo de caja proyectado y acompañamiento estratégico para directivos.</p>
+            <ul class="service-bullets">
+              <li>Constitución de sociedades</li>
+              <li>Modelos financieros y presupuestos</li>
+              <li>Asesoría a junta de accionistas</li>
+            </ul>
+          </li>
+          <li class="service-panel" data-svc="06">
+            <div class="service-num">06</div>
+            <h3>Facturación electrónica DTE</h3>
+            <p>Implementación, parametrización y soporte continuo del Documento Tributario Electrónico (DTE) ante el Ministerio de Hacienda.</p>
+            <ul class="service-bullets">
+              <li>Alta y certificación de emisor</li>
+              <li>Integración con su ERP o sistema</li>
+              <li>Soporte y monitoreo de transmisión</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== NOSOTROS ===== -->
+    <section class="about" id="nosotros">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <span class="eyebrow"><span>Nosotros</span></span>
+          <h2 class="section-title">
+            Una firma construida<br>
+            sobre <em>reputación</em>,<br>
+            no sobre volumen.
+          </h2>
+          <p class="section-lead">
+            <!-- TODO: reemplazar por historia real de la firma -->
+            OMC S.A.S. de C.V. es un despacho de consultoría contable y fiscal con sede en San Salvador.
+            Atendemos a empresas medianas, profesionales independientes y grupos familiares que requieren
+            criterio técnico, confidencialidad y trato directo con los socios responsables.
+          </p>
+          <p>
+            Nuestra metodología combina tecnología contable moderna con la disciplina del oficio:
+            cada cliente recibe documentación auditable, calendarios de cumplimiento personalizados y
+            un único punto de contacto técnico.
+          </p>
+        </div>
+
+        <dl class="about-stats">
+          <div>
+            <dt class="micro">Fundación</dt>
+            <dd class="stat">2010</dd>
+            <p class="stat-foot">Más de 15 años atendiendo el mercado salvadoreño.</p>
+          </div>
+          <div>
+            <dt class="micro">Clientes activos</dt>
+            <dd class="stat">120<span class="num-sub">+</span></dd>
+            <p class="stat-foot">PyMES, profesionales y grupos familiares.</p>
+          </div>
+          <div>
+            <dt class="micro">Disciplinas</dt>
+            <dd class="stat">06</dd>
+            <p class="stat-foot">Contabilidad, fiscal, planillas, auditoría, consultoría, DTE.</p>
+          </div>
+          <div>
+            <dt class="micro">Sede</dt>
+            <dd class="stat">SV</dd>
+            <p class="stat-foot">San Salvador, El Salvador. <!-- TODO: dirección exacta --></p>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== RESULTADOS ===== -->
+    <section class="results" id="resultados">
+      <div class="container">
+        <div class="section-top">
+          <span class="eyebrow"><span>Resultados</span></span>
+          <h2 class="section-title">
+            Lo que se mide,<br>
+            <em>se mejora.</em>
+          </h2>
+        </div>
+
+        <div class="results-grid">
+          <article class="result-hero">
+            <p class="result-hero-num"><span class="copper">+42<span class="num-sub">%</span></span></p>
+            <p class="result-hero-label">Ahorro fiscal promedio anual logrado para clientes recurrentes mediante planeación tributaria oportuna. <!-- TODO: validar cifra --></p>
+          </article>
+
+          <article class="result-card">
+            <p class="result-num">300<span class="num-sub">+</span></p>
+            <p class="result-label">Empresas atendidas desde 2010</p>
+          </article>
+          <article class="result-card">
+            <p class="result-num">98<span class="num-sub">%</span></p>
+            <p class="result-label">Declaraciones presentadas dentro del plazo legal</p>
+          </article>
+          <article class="result-card">
+            <p class="result-num">15<span class="num-sub">+</span></p>
+            <p class="result-label">Años de trayectoria técnica continua</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LEDGER INTERLUDE ===== -->
+    <section class="ledger" aria-labelledby="ledger-quote">
+      <div class="paper-grain paper-grain-dark" aria-hidden="true"></div>
+      <div class="container ledger-grid">
+        <p class="ledger-mark">§</p>
+        <blockquote class="ledger-quote" id="ledger-quote">
+          <p>
+            <span class="reveal-chars">
+              «La contabilidad bien hecha no es un costo administrativo, es la única manera honesta
+              de saber cómo está realmente la empresa.»
             </span>
-          </span>
-        </h1>
-
-        <p class="hero-desc reveal-text">Durante más de 15 años, hemos acompañado a más de 500 empresas en México con servicios de consultoría contable, fiscal y patrimonial de alto nivel. Su tranquilidad financiera es nuestra prioridad.</p>
-
-        <div class="hero-actions reveal-text">
-          <a href="#contacto" class="btn-primary magnetic-btn">
-            <span>Agendar Consultoría</span>
-            <i class="fas fa-arrow-right"></i>
-            <div class="btn-shine"></div>
-          </a>
-          <a href="#servicios" class="btn-outline magnetic-btn">
-            <span>Conocer Más</span>
-            <div class="btn-border"></div>
-          </a>
-        </div>
-
-        <div class="hero-proof reveal-text">
-          <div class="proof-avatars">
-            <div class="avatar">RM</div>
-            <div class="avatar">MG</div>
-            <div class="avatar">CH</div>
-            <div class="avatar">+</div>
-          </div>
-          <div class="proof-text">
-            <strong>500+ empresas</strong> respaldan nuestra trayectoria
-            <div class="proof-stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <span>4.9/5</span>
-            </div>
-          </div>
-        </div>
+          </p>
+          <footer class="ledger-cite">
+            — <span>Socios de OMC, San Salvador <!-- TODO: cita real, autor real --></span>
+          </footer>
+        </blockquote>
       </div>
+    </section>
 
-      <div class="hero-right">
-        <div class="hero-dashboard">
-          <div class="dash-card dash-main glass-morph">
-            <div class="dash-header">
-              <span class="dash-title">Panel Fiscal</span>
-              <div class="dash-dots"><span></span><span></span><span></span></div>
-            </div>
-            <div class="dash-chart">
-              <svg viewBox="0 0 300 120" class="chart-svg">
-                <defs>
-                  <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#d4a853" stop-opacity="0.3"/>
-                    <stop offset="100%" stop-color="#d4a853" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <path d="M0,100 Q30,90 60,70 T120,50 T180,30 T240,20 T300,10 L300,120 L0,120Z" fill="url(#chartGrad)" class="chart-area"/>
-                <path d="M0,100 Q30,90 60,70 T120,50 T180,30 T240,20 T300,10" fill="none" stroke="#d4a853" stroke-width="2" class="chart-line"/>
-              </svg>
-              <div class="chart-label">Ahorro fiscal acumulado</div>
-              <div class="chart-value">+32%</div>
-            </div>
-          </div>
-
-          <div class="dash-card dash-status glass-morph float-card-1">
-            <div class="status-icon success"><i class="fas fa-check"></i></div>
-            <div>
-              <div class="status-title">SAT</div>
-              <div class="status-text">Al corriente</div>
-            </div>
-          </div>
-
-          <div class="dash-card dash-metric glass-morph float-card-2">
-            <div class="metric-ring">
-              <svg viewBox="0 0 48 48">
-                <circle cx="24" cy="24" r="20" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="3"/>
-                <circle cx="24" cy="24" r="20" fill="none" stroke="#d4a853" stroke-width="3" stroke-dasharray="126" stroke-dashoffset="6" stroke-linecap="round" transform="rotate(-90 24 24)"/>
-              </svg>
-              <span>100%</span>
-            </div>
-            <div>
-              <div class="status-title">Cumplimiento</div>
-              <div class="status-text">Fiscal</div>
-            </div>
-          </div>
-
-          <div class="dash-card dash-alert glass-morph float-card-3">
-            <i class="fas fa-bell"></i>
-            <span>Declaración mensual enviada</span>
-            <small>Hace 2h</small>
-          </div>
+    <!-- ===== PLANES ===== -->
+    <section class="plans" id="planes">
+      <div class="container">
+        <div class="section-top">
+          <span class="eyebrow"><span>Planes</span></span>
+          <h2 class="section-title">
+            Honorarios mensuales,<br>
+            <em>transparentes.</em>
+          </h2>
+          <p class="section-lead">
+            Tres niveles diseñados para acompañar el ciclo de vida de su empresa.
+            Todos incluyen contador asignado, cumplimiento DGII y reporte mensual ejecutivo.
+            <!-- TODO: tarifas reales por confirmar -->
+          </p>
         </div>
+
+        <div class="plans-grid">
+          <article class="plan">
+            <header class="plan-head">
+              <span class="micro">Emprendedor</span>
+              <h3 class="plan-name">Inicio</h3>
+            </header>
+            <p class="plan-price">
+              <span class="plan-currency">US$</span>
+              <span class="plan-amount">185</span>
+              <span class="plan-period">/ mes</span>
+            </p>
+            <p class="plan-pitch">Para profesionales independientes y emprendimientos en sus primeros 24 meses.</p>
+            <ul class="plan-features">
+              <li>Contabilidad mensual hasta 30 transacciones</li>
+              <li>Declaraciones IVA y pago a cuenta</li>
+              <li>Renta anual incluida</li>
+              <li>1 reporte mensual ejecutivo</li>
+              <li>Soporte por correo (48h)</li>
+            </ul>
+            <a href="#contacto" class="btn btn-secondary plan-cta magnetic">Conversar con un socio</a>
+          </article>
+
+          <article class="plan plan-featured">
+            <span class="plan-badge"><span class="dot dot-copper"></span> Recomendado</span>
+            <header class="plan-head">
+              <span class="micro">PyME</span>
+              <h3 class="plan-name">Operación</h3>
+            </header>
+            <p class="plan-price">
+              <span class="plan-currency">US$</span>
+              <span class="plan-amount">385</span>
+              <span class="plan-period">/ mes</span>
+            </p>
+            <p class="plan-pitch">Para empresas activas con planilla, inventario y obligaciones tributarias mensuales.</p>
+            <ul class="plan-features">
+              <li>Contabilidad mensual hasta 200 transacciones</li>
+              <li>IVA, pago a cuenta, ISR y retenciones</li>
+              <li>Planilla ISSS, AFP, INSAFORP hasta 20 colaboradores</li>
+              <li>Implementación y soporte DTE</li>
+              <li>Reportes financieros para banca</li>
+              <li>Reunión técnica trimestral</li>
+            </ul>
+            <a href="#contacto" class="btn btn-primary plan-cta magnetic">Solicitar propuesta</a>
+          </article>
+
+          <article class="plan">
+            <header class="plan-head">
+              <span class="micro">Corporativo</span>
+              <h3 class="plan-name">Estructura</h3>
+            </header>
+            <p class="plan-price">
+              <span class="plan-currency">desde US$</span>
+              <span class="plan-amount">850</span>
+              <span class="plan-period">/ mes</span>
+            </p>
+            <p class="plan-pitch">Grupos económicos, sociedades con operación multinacional y dictamen fiscal.</p>
+            <ul class="plan-features">
+              <li>Volumen ilimitado de transacciones</li>
+              <li>Consolidación de estados financieros</li>
+              <li>Auditoría interna y dictamen fiscal</li>
+              <li>Planeación tributaria estratégica</li>
+              <li>Atención prioritaria DGII y MH</li>
+              <li>Socio responsable asignado</li>
+            </ul>
+            <a href="#contacto" class="btn btn-secondary plan-cta magnetic">Conversar con un socio</a>
+          </article>
+        </div>
+
+        <p class="plans-foot micro">
+          Las cifras son referenciales. Cada propuesta se ajusta al volumen contable, número de planillas e industria.
+        </p>
       </div>
-    </div>
+    </section>
 
-    <div class="hero-scroll-line">
-      <div class="scroll-progress" id="scrollLine"></div>
-    </div>
-  </section>
-
-  <!-- ========== MARQUEE ========== -->
-  <div class="marquee-strip">
-    <div class="marquee-track">
-      <span>Contabilidad General</span><span class="sep">&bull;</span>
-      <span>Fiscal y Tributario</span><span class="sep">&bull;</span>
-      <span>Nóminas y IMSS</span><span class="sep">&bull;</span>
-      <span>Auditoría Financiera</span><span class="sep">&bull;</span>
-      <span>Consultoría Empresarial</span><span class="sep">&bull;</span>
-      <span>Defensa Fiscal</span><span class="sep">&bull;</span>
-      <span>Facturación CFDI</span><span class="sep">&bull;</span>
-      <span>Planeación Tributaria</span><span class="sep">&bull;</span>
-      <span>Contabilidad General</span><span class="sep">&bull;</span>
-      <span>Fiscal y Tributario</span><span class="sep">&bull;</span>
-      <span>Nóminas y IMSS</span><span class="sep">&bull;</span>
-      <span>Auditoría Financiera</span><span class="sep">&bull;</span>
-      <span>Consultoría Empresarial</span><span class="sep">&bull;</span>
-      <span>Defensa Fiscal</span><span class="sep">&bull;</span>
-      <span>Facturación CFDI</span><span class="sep">&bull;</span>
-      <span>Planeación Tributaria</span><span class="sep">&bull;</span>
-    </div>
-  </div>
-
-  <!-- ========== SERVICIOS ========== -->
-  <section class="section" id="servicios">
-    <div class="container">
-      <div class="section-top">
-        <div class="section-label">
-          <div class="label-line"></div>
-          <span>Servicios</span>
+    <!-- ===== EQUIPO ===== -->
+    <section class="team" id="equipo">
+      <div class="container">
+        <div class="section-top">
+          <span class="eyebrow"><span>Equipo</span></span>
+          <h2 class="section-title">
+            Profesionales con<br>
+            <em>responsabilidad directa.</em>
+          </h2>
         </div>
-        <h2 class="section-title reveal-text">Servicios profesionales<br><span class="text-gold">a la medida de su empresa</span></h2>
+
+        <ul class="team-grid">
+          <!-- TODO: reemplazar fotos en /assets/img/team-*.jpg y nombres reales -->
+          <li class="team-card">
+            <figure class="team-portrait">
+              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80&auto=format" alt="Retrato del socio fundador" loading="lazy">
+            </figure>
+            <h3 class="team-name">[Nombre del socio]</h3>
+            <p class="team-role">Socio fundador · Contador Público Autorizado</p>
+            <p class="team-bio">Más de 25 años de experiencia en consultoría fiscal y dictamen.</p>
+          </li>
+          <li class="team-card">
+            <figure class="team-portrait">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80&auto=format" alt="Retrato de gerente fiscal" loading="lazy">
+            </figure>
+            <h3 class="team-name">[Nombre]</h3>
+            <p class="team-role">Gerente de impuestos</p>
+            <p class="team-bio">Especialista en planeación tributaria y atención a requerimientos DGII.</p>
+          </li>
+          <li class="team-card">
+            <figure class="team-portrait">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80&auto=format" alt="Retrato de gerente contable" loading="lazy">
+            </figure>
+            <h3 class="team-name">[Nombre]</h3>
+            <p class="team-role">Gerente contable</p>
+            <p class="team-bio">Responsable del cierre mensual y reporte financiero para clientes corporativos.</p>
+          </li>
+          <li class="team-card">
+            <figure class="team-portrait">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80&auto=format" alt="Retrato de líder de planillas" loading="lazy">
+            </figure>
+            <h3 class="team-name">[Nombre]</h3>
+            <p class="team-role">Líder de planillas e ISSS</p>
+            <p class="team-bio">Cumplimiento laboral, ISSS, AFP e INSAFORP de extremo a extremo.</p>
+          </li>
+        </ul>
       </div>
+    </section>
 
-      <div class="services-bento">
-        <div class="bento-card bento-lg glass-morph" data-service="contabilidad">
-          <div class="bento-number">01</div>
-          <div class="bento-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-          <h3>Contabilidad General</h3>
-          <p>Elaboración de estados financieros, balanzas de comprobación y reportes ejecutivos que proporcionan la claridad necesaria para la toma de decisiones acertadas.</p>
-          <div class="bento-arrow"><i class="fas fa-arrow-right"></i></div>
-        </div>
-        <div class="bento-card glass-morph" data-service="fiscal">
-          <div class="bento-number">02</div>
-          <div class="bento-icon"><i class="fas fa-landmark"></i></div>
-          <h3>Fiscal y Tributario</h3>
-          <p>Gestión integral de obligaciones tributarias, planeación fiscal estratégica, tramitación de devoluciones y cumplimiento normativo ante el SAT.</p>
-          <div class="bento-arrow"><i class="fas fa-arrow-right"></i></div>
-        </div>
-        <div class="bento-card glass-morph" data-service="nominas">
-          <div class="bento-number">03</div>
-          <div class="bento-icon"><i class="fas fa-users-gear"></i></div>
-          <h3>Nóminas y IMSS</h3>
-          <p>Administración de nómina, movimientos ante el IMSS e INFONAVIT, timbrado de CFDI y cumplimiento de la normatividad laboral vigente.</p>
-          <div class="bento-arrow"><i class="fas fa-arrow-right"></i></div>
-        </div>
-        <div class="bento-card glass-morph" data-service="auditoria">
-          <div class="bento-number">04</div>
-          <div class="bento-icon"><i class="fas fa-scale-balanced"></i></div>
-          <h3>Auditoría</h3>
-          <p>Revisiones financieras, fiscales y de cumplimiento que garantizan la integridad y transparencia de su información corporativa.</p>
-          <div class="bento-arrow"><i class="fas fa-arrow-right"></i></div>
-        </div>
-        <div class="bento-card glass-morph" data-service="consultoria">
-          <div class="bento-number">05</div>
-          <div class="bento-icon"><i class="fas fa-briefcase"></i></div>
-          <h3>Consultoría Empresarial</h3>
-          <p>Orientación estratégica para la constitución societaria, reestructuración corporativa y optimización de procesos administrativos.</p>
-          <div class="bento-arrow"><i class="fas fa-arrow-right"></i></div>
-        </div>
-        <div class="bento-card bento-lg glass-morph" data-service="defensa">
-          <div class="bento-number">06</div>
-          <div class="bento-icon"><i class="fas fa-gavel"></i></div>
-          <h3>Defensa Fiscal</h3>
-          <p>Representación legal ante autoridades fiscales, interposición de recursos de revocación, juicios de nulidad y atención oportuna de requerimientos. La protección de su patrimonio es nuestra responsabilidad.</p>
-          <div class="bento-arrow"><i class="fas fa-arrow-right"></i></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== NOSOTROS ========== -->
-  <section class="section section-dark" id="nosotros">
-    <div class="container">
-      <div class="about-layout">
-        <div class="about-left">
-          <div class="section-label">
-            <div class="label-line"></div>
-            <span>Nosotros</span>
-          </div>
-          <h2 class="section-title reveal-text">La razón por la que<br>más de 500 empresas confían en <span class="text-gold">OMC</span></h2>
-          <p class="about-desc reveal-text">Integramos experiencia profesional de primer nivel con herramientas tecnológicas avanzadas para ofrecer un servicio que trasciende lo convencional. Somos su socio estratégico en materia contable y fiscal.</p>
-
-          <div class="about-pillars">
-            <div class="pillar reveal-text">
-              <div class="pillar-num">01</div>
-              <div class="pillar-content">
-                <h4>Equipo Multidisciplinario</h4>
-                <p>Contadores Públicos, fiscalistas, auditores y abogados coordinados para brindar soluciones integrales.</p>
-              </div>
-            </div>
-            <div class="pillar reveal-text">
-              <div class="pillar-num">02</div>
-              <div class="pillar-content">
-                <h4>Tecnología de Punta</h4>
-                <p>Plataformas digitales de vanguardia, reportes en tiempo real y canales de comunicación permanentes.</p>
-              </div>
-            </div>
-            <div class="pillar reveal-text">
-              <div class="pillar-num">03</div>
-              <div class="pillar-content">
-                <h4>Atención Personalizada</h4>
-                <p>Cada cliente cuenta con un ejecutivo asignado para atender sus requerimientos de manera oportuna y diligente.</p>
-              </div>
-            </div>
-            <div class="pillar reveal-text">
-              <div class="pillar-num">04</div>
-              <div class="pillar-content">
-                <h4>Actualización Permanente</h4>
-                <p>Monitoreamos constantemente las reformas fiscales, modificaciones legales y disposiciones emitidas por las autoridades.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="about-right">
-          <div class="about-visual-stack">
-            <div class="visual-card glass-morph">
-              <div class="visual-grid">
-                <div class="vg-item"><i class="fas fa-award"></i><span>Certificados</span></div>
-                <div class="vg-item"><i class="fas fa-handshake"></i><span>Confianza</span></div>
-                <div class="vg-item"><i class="fas fa-bolt"></i><span>Eficiencia</span></div>
-                <div class="vg-item"><i class="fas fa-lock"></i><span>Seguridad</span></div>
-              </div>
-            </div>
-            <div class="visual-badge glass-morph">
-              <div class="badge-stars">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              </div>
-              <strong>4.9 de 5</strong>
-              <small>+120 reseñas verificadas</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== RESULTADOS ========== -->
-  <section class="section" id="resultados">
-    <div class="container">
-      <div class="section-top center">
-        <div class="section-label center">
-          <div class="label-line"></div>
-          <span>Resultados</span>
-        </div>
-        <h2 class="section-title reveal-text">Resultados que<br><span class="text-gold">respaldan nuestra labor</span></h2>
-      </div>
-
-      <div class="stats-row">
-        <div class="stat-block reveal-text">
-          <div class="stat-num"><span data-count="500">0</span><span class="stat-plus">+</span></div>
-          <div class="stat-bar"><div class="stat-fill" style="width:90%"></div></div>
-          <div class="stat-name">Empresas Asesoradas</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-block reveal-text">
-          <div class="stat-num"><span data-count="12000">0</span><span class="stat-plus">+</span></div>
-          <div class="stat-bar"><div class="stat-fill" style="width:95%"></div></div>
-          <div class="stat-name">Declaraciones Presentadas</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-block reveal-text">
-          <div class="stat-num"><span data-count="35">0</span><span class="stat-plus">M+</span></div>
-          <div class="stat-bar"><div class="stat-fill" style="width:75%"></div></div>
-          <div class="stat-name">Pesos en Ahorro Fiscal</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-block reveal-text">
-          <div class="stat-num"><span data-count="15">0</span><span class="stat-plus"> años</span></div>
-          <div class="stat-bar"><div class="stat-fill" style="width:100%"></div></div>
-          <div class="stat-name">De Trayectoria</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== PROCESO ========== -->
-  <section class="section section-dark" id="proceso">
-    <div class="container">
-      <div class="section-top center">
-        <div class="section-label center">
-          <div class="label-line"></div>
-          <span>Proceso</span>
-        </div>
-        <h2 class="section-title reveal-text">Metodología orientada<br><span class="text-gold">a resultados</span></h2>
-      </div>
-
-      <div class="process-horizontal">
-        <div class="process-line"><div class="process-progress" id="processProgress"></div></div>
-        <div class="process-steps">
-          <div class="p-step reveal-text">
-            <div class="p-step-dot"><span>01</span></div>
-            <h4>Consulta Inicial</h4>
-            <p>Evaluamos su situación fiscal y contable actual de manera integral</p>
-          </div>
-          <div class="p-step reveal-text">
-            <div class="p-step-dot"><span>02</span></div>
-            <h4>Diagnóstico</h4>
-            <p>Identificamos áreas de oportunidad y factores de riesgo en su historial</p>
-          </div>
-          <div class="p-step reveal-text">
-            <div class="p-step-dot"><span>03</span></div>
-            <h4>Plan Estratégico</h4>
-            <p>Elaboramos un plan fiscal y contable adaptado a sus objetivos</p>
-          </div>
-          <div class="p-step reveal-text">
-            <div class="p-step-dot"><span>04</span></div>
-            <h4>Implementación</h4>
-            <p>Ejecutamos las estrategias y optimizamos sus procesos financieros</p>
-          </div>
-          <div class="p-step reveal-text">
-            <div class="p-step-dot"><span>05</span></div>
-            <h4>Seguimiento</h4>
-            <p>Supervisión continua con informes periódicos y ajustes oportunos</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== PLANES ========== -->
-  <section class="section" id="planes">
-    <div class="container">
-      <div class="section-top center">
-        <div class="section-label center">
-          <div class="label-line"></div>
-          <span>Planes</span>
-        </div>
-        <h2 class="section-title reveal-text">Esquemas de inversión<br><span class="text-gold">con retorno garantizado</span></h2>
-      </div>
-
-      <div class="pricing-switch">
-        <span class="sw-label">Mensual</span>
-        <label class="switch">
-          <input type="checkbox" id="pricingToggle">
-          <span class="switch-track"><span class="switch-thumb"></span></span>
-        </label>
-        <span class="sw-label">Anual <span class="sw-save">-20%</span></span>
-      </div>
-
-      <div class="pricing-cards">
-        <div class="price-card glass-morph reveal-text">
-          <div class="price-tier">Emprendedor</div>
-          <div class="price-monthly"><span class="price-currency">$</span><span class="price-val">3,500</span><span class="price-freq">/mes</span></div>
-          <div class="price-annual" style="display:none"><span class="price-currency">$</span><span class="price-val">2,800</span><span class="price-freq">/mes</span></div>
-          <p class="price-desc">Ideal para personas físicas y negocios en etapa inicial</p>
-          <ul class="price-list">
-            <li><i class="fas fa-check"></i>Contabilidad mensual</li>
-            <li><i class="fas fa-check"></i>Declaraciones mensuales</li>
-            <li><i class="fas fa-check"></i>Declaración anual</li>
-            <li><i class="fas fa-check"></i>Facturación CFDI</li>
-            <li><i class="fas fa-check"></i>Soporte email</li>
-            <li class="muted"><i class="fas fa-minus"></i>Nómina</li>
-            <li class="muted"><i class="fas fa-minus"></i>Auditoría</li>
-          </ul>
-          <a href="#contacto" class="btn-outline btn-full magnetic-btn"><span>Seleccionar</span></a>
+    <!-- ===== FAQ ===== -->
+    <section class="faq" id="faq">
+      <div class="container faq-grid">
+        <div class="faq-side">
+          <span class="eyebrow"><span>FAQ</span></span>
+          <h2 class="section-title">
+            Preguntas<br>
+            <em>frecuentes.</em>
+          </h2>
+          <p class="section-lead">¿No encuentra su pregunta? <a href="#contacto" class="link">Escríbanos directamente</a>.</p>
         </div>
 
-        <div class="price-card glass-morph featured reveal-text">
-          <div class="price-badge">Recomendado</div>
-          <div class="price-tier">PyME</div>
-          <div class="price-monthly"><span class="price-currency">$</span><span class="price-val">7,500</span><span class="price-freq">/mes</span></div>
-          <div class="price-annual" style="display:none"><span class="price-currency">$</span><span class="price-val">6,000</span><span class="price-freq">/mes</span></div>
-          <p class="price-desc">Diseñado para empresas en fase de expansión y consolidación</p>
-          <ul class="price-list">
-            <li><i class="fas fa-check"></i>Todo del Emprendedor</li>
-            <li><i class="fas fa-check"></i>Nómina (hasta 15)</li>
-            <li><i class="fas fa-check"></i>IMSS e INFONAVIT</li>
-            <li><i class="fas fa-check"></i>Estados financieros</li>
-            <li><i class="fas fa-check"></i>Planeación fiscal</li>
-            <li><i class="fas fa-check"></i>Soporte WhatsApp</li>
-            <li class="muted"><i class="fas fa-minus"></i>Auditoría externa</li>
-          </ul>
-          <a href="#contacto" class="btn-primary btn-full magnetic-btn"><span>Seleccionar</span><div class="btn-shine"></div></a>
-        </div>
-
-        <div class="price-card glass-morph reveal-text">
-          <div class="price-tier">Corporativo</div>
-          <div class="price-monthly"><span class="price-currency">$</span><span class="price-val">15,000</span><span class="price-freq">/mes</span></div>
-          <div class="price-annual" style="display:none"><span class="price-currency">$</span><span class="price-val">12,000</span><span class="price-freq">/mes</span></div>
-          <p class="price-desc">Solución integral para organizaciones de mayor envergadura</p>
-          <ul class="price-list">
-            <li><i class="fas fa-check"></i>Todo del PyME</li>
-            <li><i class="fas fa-check"></i>Nómina ilimitada</li>
-            <li><i class="fas fa-check"></i>Auditoría anual</li>
-            <li><i class="fas fa-check"></i>Consultoría estratégica</li>
-            <li><i class="fas fa-check"></i>Defensa fiscal</li>
-            <li><i class="fas fa-check"></i>Ejecutivo dedicado</li>
-            <li><i class="fas fa-check"></i>Reportes tiempo real</li>
-          </ul>
-          <a href="#contacto" class="btn-outline btn-full magnetic-btn"><span>Seleccionar</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== TESTIMONIOS ========== -->
-  <section class="section section-dark" id="testimonios">
-    <div class="container">
-      <div class="section-top center">
-        <div class="section-label center">
-          <div class="label-line"></div>
-          <span>Testimonios</span>
-        </div>
-        <h2 class="section-title reveal-text">La voz de quienes<br><span class="text-gold">confían en nosotros</span></h2>
-      </div>
-
-      <div class="testimonials-wrap">
-        <div class="testimonial-slider" id="testimonialTrack">
-          <div class="testi-card glass-morph">
-            <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
-            <p>"La gestión de OMC ha sido determinante para la salud financiera de nuestro grupo. Lograron una optimización fiscal significativa con absoluto apego a la normatividad."</p>
-            <div class="testi-author">
-              <div class="testi-avatar">RM</div>
-              <div>
-                <strong>Roberto Méndez</strong>
-                <span>CEO, Grupo Industrial del Norte</span>
-              </div>
-            </div>
-          </div>
-          <div class="testi-card glass-morph">
-            <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
-            <p>"El nivel de profesionalismo y diligencia del equipo de OMC es sobresaliente. Nos mantienen informados de cada cambio normativo con suficiente anticipación."</p>
-            <div class="testi-author">
-              <div class="testi-avatar">MG</div>
-              <div>
-                <strong>María González</strong>
-                <span>Directora, Comercializadora MG</span>
-              </div>
-            </div>
-          </div>
-          <div class="testi-card glass-morph">
-            <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
-            <p>"Enfrentamos un procedimiento fiscal complejo y el equipo de OMC lo resolvió con eficacia y solidez jurídica. Su capacidad de defensa fiscal es excepcional."</p>
-            <div class="testi-author">
-              <div class="testi-avatar">CH</div>
-              <div>
-                <strong>Carlos Herrera</strong>
-                <span>Fundador, TechStart MX</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="testi-controls">
-          <button class="testi-btn" id="prevBtn"><i class="fas fa-arrow-left"></i></button>
-          <div class="testi-dots" id="sliderDots"></div>
-          <button class="testi-btn" id="nextBtn"><i class="fas fa-arrow-right"></i></button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== EQUIPO ========== -->
-  <section class="section" id="equipo">
-    <div class="container">
-      <div class="section-top center">
-        <div class="section-label center">
-          <div class="label-line"></div>
-          <span>Equipo</span>
-        </div>
-        <h2 class="section-title reveal-text">Profesionales que<br><span class="text-gold">distinguen nuestro servicio</span></h2>
-      </div>
-
-      <div class="team-cards">
-        <div class="team-member glass-morph reveal-text">
-          <div class="member-photo"><span>OM</span></div>
-          <h3>C.P. Omar Martínez</h3>
-          <span class="member-role">Director General</span>
-          <p>Más de 15 años de trayectoria en consultoría fiscal para grupos empresariales nacionales e internacionales</p>
-          <div class="member-links">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
-          </div>
-        </div>
-        <div class="team-member glass-morph reveal-text">
-          <div class="member-photo"><span>PR</span></div>
-          <h3>L.C. Patricia Ramírez</h3>
-          <span class="member-role">Directora de Auditoría</span>
-          <p>Certificada por el IMCP. Amplia experiencia en firmas de auditoría de reconocimiento internacional</p>
-          <div class="member-links">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
-          </div>
-        </div>
-        <div class="team-member glass-morph reveal-text">
-          <div class="member-photo"><span>RF</span></div>
-          <h3>Mtro. Ricardo Fuentes</h3>
-          <span class="member-role">Director Fiscal</span>
-          <p>Maestro en Derecho Fiscal. Especialista en litigio tributario y resolución de controversias</p>
-          <div class="member-links">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
-          </div>
-        </div>
-        <div class="team-member glass-morph reveal-text">
-          <div class="member-photo"><span>LC</span></div>
-          <h3>C.P. Laura Castillo</h3>
-          <span class="member-role">Coordinadora de Nóminas</span>
-          <p>Especialista en administración de nóminas y seguridad social para más de 200 organizaciones</p>
-          <div class="member-links">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== FAQ ========== -->
-  <section class="section section-dark" id="faq">
-    <div class="container">
-      <div class="faq-layout">
-        <div class="faq-left">
-          <div class="section-label">
-            <div class="label-line"></div>
-            <span>FAQ</span>
-          </div>
-          <h2 class="section-title reveal-text">Preguntas<br><span class="text-gold">frecuentes</span></h2>
-          <p class="reveal-text">Si no encuentra la información que busca, con gusto le atenderemos de manera personalizada.</p>
-          <a href="#contacto" class="btn-outline magnetic-btn" style="margin-top:24px"><span>Contactar</span></a>
-        </div>
-        <div class="faq-right">
-          <div class="faq-item glass-morph">
-            <button class="faq-question"><span>¿Qué documentación se requiere para iniciar?</span><div class="faq-icon"><span></span><span></span></div></button>
-            <div class="faq-answer"><p>Únicamente su constancia de situación fiscal, identificación oficial vigente y los estados de cuenta recientes. Nuestro equipo se encarga de gestionar la transición completa, incluyendo la migración desde su contador anterior.</p></div>
-          </div>
-          <div class="faq-item glass-morph">
-            <button class="faq-question"><span>¿Atienden empresas de cualquier dimensión?</span><div class="faq-icon"><span></span><span></span></div></button>
-            <div class="faq-answer"><p>Efectivamente. Brindamos servicio tanto a personas físicas con actividad empresarial como a corporativos de gran escala. Cada plan se estructura conforme al volumen y complejidad de las operaciones de su organización.</p></div>
-          </div>
-          <div class="faq-item glass-morph">
-            <button class="faq-question"><span>¿Qué protocolos de confidencialidad aplican?</span><div class="faq-icon"><span></span><span></span></div></button>
-            <div class="faq-answer"><p>Suscribimos convenios de confidencialidad con cada cliente. La información se resguarda en servidores con cifrado de nivel bancario y acceso restringido exclusivamente al equipo asignado a su cuenta.</p></div>
-          </div>
-          <div class="faq-item glass-morph">
-            <button class="faq-question"><span>¿Es posible modificar el plan contratado?</span><div class="faq-icon"><span></span><span></span></div></button>
-            <div class="faq-answer"><p>Por supuesto. Los planes pueden escalarse o ajustarse en cualquier momento. Las modificaciones se aplican a partir del siguiente periodo de facturación, sin penalización alguna.</p></div>
-          </div>
-          <div class="faq-item glass-morph">
-            <button class="faq-question"><span>¿Qué ocurre ante un requerimiento del SAT?</span><div class="faq-icon"><span></span><span></span></div></button>
-            <div class="faq-answer"><p>Disponemos de un área especializada en defensa fiscal. Ante cualquier requerimiento, auditoría o determinación de créditos fiscales, activamos de inmediato un protocolo de atención con representación legal integral.</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CONTACTO ========== -->
-  <section class="section" id="contacto">
-    <div class="container">
-      <div class="contact-layout">
-        <div class="contact-left">
-          <div class="section-label">
-            <div class="label-line"></div>
-            <span>Contacto</span>
-          </div>
-          <h2 class="section-title reveal-text">Permítanos conocer<br><span class="text-gold">sus necesidades</span></h2>
-          <p class="reveal-text">Solicite una consultoría inicial sin costo y conozca de primera mano cómo podemos fortalecer la posición financiera de su empresa.</p>
-
-          <div class="contact-cards">
-            <div class="c-card glass-morph">
-              <i class="fas fa-phone"></i>
-              <div><strong>Teléfono</strong><span>(555) 123-4567</span></div>
-            </div>
-            <div class="c-card glass-morph">
-              <i class="fas fa-envelope"></i>
-              <div><strong>Email</strong><span>contacto@omc.com.mx</span></div>
-            </div>
-            <div class="c-card glass-morph">
-              <i class="fas fa-location-dot"></i>
-              <div><strong>Oficinas</strong><span>Av. Reforma 222, CDMX</span></div>
-            </div>
-            <div class="c-card glass-morph">
-              <i class="fas fa-clock"></i>
-              <div><strong>Horario</strong><span>Lun - Vie: 9:00 - 18:00</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-right">
-          <form class="contact-form glass-morph" id="contactForm">
-            <div class="form-group">
-              <input type="text" id="nombre" placeholder=" " required>
-              <label for="nombre">Nombre completo</label>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <input type="email" id="email" placeholder=" " required>
-                <label for="email">Email</label>
-              </div>
-              <div class="form-group">
-                <input type="tel" id="telefono" placeholder=" ">
-                <label for="telefono">Teléfono</label>
-              </div>
-            </div>
-            <div class="form-group">
-              <select id="servicio" required>
-                <option value="" disabled selected></option>
-                <option value="contabilidad">Contabilidad General</option>
-                <option value="fiscal">Fiscal y Tributario</option>
-                <option value="nominas">Nóminas y IMSS</option>
-                <option value="auditoria">Auditoría</option>
-                <option value="consultoria">Consultoría</option>
-                <option value="defensa">Defensa Fiscal</option>
-              </select>
-              <label for="servicio">Servicio de interés</label>
-            </div>
-            <div class="form-group">
-              <textarea id="mensaje" rows="4" placeholder=" "></textarea>
-              <label for="mensaje">Su mensaje</label>
-            </div>
-            <button type="submit" class="btn-primary btn-full magnetic-btn">
-              <span>Enviar Mensaje</span>
-              <i class="fas fa-paper-plane"></i>
-              <div class="btn-shine"></div>
+        <ul class="faq-list">
+          <li class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>¿Atienden empresas fuera de San Salvador?</span>
+              <svg class="ico faq-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-          </form>
+            <div class="faq-a">
+              <p>Sí. Atendemos clientes en todo el territorio salvadoreño de manera remota mediante portal seguro
+              y reuniones presenciales programadas en nuestras oficinas o las suyas.</p>
+            </div>
+          </li>
+          <li class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>¿Pueden migrar mi contabilidad desde otro despacho?</span>
+              <svg class="ico faq-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Sí. Hacemos diagnóstico del estado contable y fiscal, plan de migración con cronograma definido y
+              tomamos control sin interrupción de las obligaciones mensuales.</p>
+            </div>
+          </li>
+          <li class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>¿Cómo se factura el servicio?</span>
+              <svg class="ico faq-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Mensualidad fija conforme al plan contratado. Trabajos extraordinarios (dictamen, auditoría especial,
+              defensa fiscal) se cotizan por separado con presupuesto cerrado antes de iniciar.</p>
+            </div>
+          </li>
+          <li class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>¿Tienen experiencia con DTE / facturación electrónica?</span>
+              <svg class="ico faq-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Sí. Hemos implementado DTE en clientes de comercio, servicios y manufactura, incluyendo integraciones
+              con ERPs propios y de terceros y monitoreo continuo de transmisión al Ministerio de Hacienda.</p>
+            </div>
+          </li>
+          <li class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>¿Atienden requerimientos y fiscalizaciones DGII?</span>
+              <svg class="ico faq-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Sí, es uno de nuestros servicios centrales. Acompañamos al cliente desde la respuesta inicial hasta
+              la resolución, con criterio técnico documentado y representación ante la administración tributaria.</p>
+            </div>
+          </li>
+          <li class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>¿En cuánto tiempo me dan respuesta a una propuesta?</span>
+              <svg class="ico faq-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Dentro de las 48 horas hábiles posteriores a una reunión inicial de diagnóstico,
+              que normalmente toma 30 a 45 minutos.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section class="contact" id="contacto">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <span class="eyebrow"><span>Contacto</span></span>
+          <h2 class="section-title">
+            Conversemos sobre<br>
+            <em>su empresa.</em>
+          </h2>
+          <p class="section-lead">
+            Solicite una consulta inicial sin costo de 30 a 45 minutos. Le responderá uno de los socios.
+          </p>
+
+          <dl class="contact-list">
+            <div>
+              <dt class="micro">Oficina</dt>
+              <dd>[Dirección] · San Salvador, El Salvador <!-- TODO: dirección exacta --></dd>
+            </div>
+            <div>
+              <dt class="micro">Teléfono</dt>
+              <dd><a href="tel:+50300000000" class="link">+503 0000 0000</a> <!-- TODO --></dd>
+            </div>
+            <div>
+              <dt class="micro">Correo</dt>
+              <dd><a href="mailto:contacto@omc.sv" class="link">contacto@omc.sv</a> <!-- TODO --></dd>
+            </div>
+            <div>
+              <dt class="micro">Horario</dt>
+              <dd>Lunes a viernes · 8:00 — 17:30</dd>
+            </div>
+          </dl>
         </div>
+
+        <form class="contact-form paper-sheet" id="contactForm" novalidate>
+          <div class="paper-sheet-corner" aria-hidden="true"></div>
+
+          <div class="field">
+            <input class="field-input" type="text" id="f-name" name="nombre" required placeholder=" ">
+            <label class="field-label" for="f-name">Nombre completo</label>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <input class="field-input" type="email" id="f-email" name="email" required placeholder=" ">
+              <label class="field-label" for="f-email">Correo electrónico</label>
+            </div>
+            <div class="field">
+              <input class="field-input" type="tel" id="f-tel" name="telefono" placeholder=" ">
+              <label class="field-label" for="f-tel">Teléfono</label>
+            </div>
+          </div>
+          <div class="field">
+            <input class="field-input" type="text" id="f-empresa" name="empresa" placeholder=" ">
+            <label class="field-label" for="f-empresa">Empresa</label>
+          </div>
+          <div class="field">
+            <select class="field-input field-select" id="f-servicio" name="servicio" required>
+              <option value="" disabled selected hidden></option>
+              <option value="contabilidad">Contabilidad general</option>
+              <option value="fiscal">Tributario y fiscal</option>
+              <option value="planillas">Planillas e ISSS</option>
+              <option value="auditoria">Auditoría</option>
+              <option value="consultoria">Consultoría empresarial</option>
+              <option value="dte">Facturación electrónica DTE</option>
+              <option value="otro">Otro</option>
+            </select>
+            <label class="field-label" for="f-servicio">Servicio de interés</label>
+          </div>
+          <div class="field">
+            <textarea class="field-input field-textarea" id="f-msg" name="mensaje" rows="4" placeholder=" "></textarea>
+            <label class="field-label" for="f-msg">Mensaje (opcional)</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary contact-submit magnetic">
+            <span>Enviar solicitud</span>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+
+          <p class="contact-fineprint micro">
+            Al enviar acepta que OMC le contacte. No compartimos sus datos con terceros.
+          </p>
+
+          <div class="contact-stamp" id="contactStamp" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="54" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="60" cy="60" r="44" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 4"/>
+              <text x="60" y="56" text-anchor="middle" font-family="Fraunces, serif" font-weight="500" font-size="14" fill="currentColor">RECIBIDO</text>
+              <text x="60" y="74" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="9" letter-spacing="2" fill="currentColor">OMC · SV</text>
+            </svg>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="foot">
+    <div class="paper-grain paper-grain-dark" aria-hidden="true"></div>
+    <div class="container foot-grid">
+      <div class="foot-brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+            <rect x="3.5" y="3.5" width="25" height="25" rx="3"/>
+            <path d="M9 22V10l7 8 7-8v12"/>
+          </svg>
+        </span>
+        <span class="foot-brand-word">
+          <span class="brand-name">OMC</span>
+          <span class="brand-sub">S.A.S. de C.V.</span>
+        </span>
+      </div>
+
+      <nav class="foot-nav" aria-label="Mapa del sitio">
+        <h4 class="micro">Servicios</h4>
+        <a href="#servicios">Contabilidad</a>
+        <a href="#servicios">Fiscal</a>
+        <a href="#servicios">Planillas</a>
+        <a href="#servicios">Auditoría</a>
+        <a href="#servicios">DTE</a>
+      </nav>
+
+      <nav class="foot-nav" aria-label="Firma">
+        <h4 class="micro">Firma</h4>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#planes">Planes</a>
+      </nav>
+
+      <div class="foot-contact">
+        <h4 class="micro">Contacto</h4>
+        <p>San Salvador, El Salvador</p>
+        <p><a href="mailto:contacto@omc.sv">contacto@omc.sv</a></p>
+        <p><a href="tel:+50300000000">+503 0000 0000</a></p>
       </div>
     </div>
-  </section>
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="#" class="nav-logo">
-            <div class="logo-mark">
-              <svg viewBox="0 0 40 40" fill="none">
-                <rect x="2" y="2" width="36" height="36" rx="8" stroke="url(#logoGrad2)" stroke-width="2"/>
-                <path d="M12 20L18 14L26 22L20 28Z" fill="url(#logoGrad2)"/>
-                <defs><linearGradient id="logoGrad2" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#d4a853"/><stop offset="100%" stop-color="#f0d78c"/></linearGradient></defs>
-              </svg>
-            </div>
-            <div class="logo-text">
-              <span class="logo-name">OMC</span>
-              <span class="logo-sub">S.A.S De C.V</span>
-            </div>
-          </a>
-          <p>Firma de consultoría contable y fiscal comprometida con la solidez financiera y el crecimiento sostenido de su empresa.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Servicios</h4>
-          <a href="#servicios">Contabilidad</a>
-          <a href="#servicios">Fiscal</a>
-          <a href="#servicios">Nóminas</a>
-          <a href="#servicios">Auditoría</a>
-          <a href="#servicios">Consultoría</a>
-        </div>
-        <div class="footer-col">
-          <h4>Empresa</h4>
-          <a href="#nosotros">Nosotros</a>
-          <a href="#resultados">Resultados</a>
-          <a href="#equipo">Equipo</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contacto">Contacto</a>
-        </div>
-        <div class="footer-col">
-          <h4>Síguenos</h4>
-          <div class="footer-social">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-whatsapp"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 OMC S.A.S De C.V. Todos los derechos reservados.</p>
-      </div>
+    <div class="container foot-bar">
+      <p class="micro">© <span id="year">2026</span> OMC S.A.S. de C.V. — Todos los derechos reservados.</p>
+      <p class="micro">Inscrito en el Registro de Comercio · San Salvador</p>
     </div>
   </footer>
 
-  <!-- WhatsApp Float -->
-  <a href="https://wa.me/5551234567" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-    <span class="wa-pulse"></span>
-  </a>
-
+  <!-- ===== DEPENDENCIES ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.0.42/dist/lenis.min.js"></script>
   <script src="js/main.js"></script>
+  <script type="module" src="js/coin.js"></script>
 </body>
 </html>
